@@ -10,7 +10,7 @@ async function seed() {
     {
       username: 'AlisonDilfer',
       birthday: null,
-      status: 'active',
+      isActive: true,
       roles: ['member'],
       memberSince: new Date('03/02/2021'),
       leftIn: null,
@@ -24,7 +24,7 @@ async function seed() {
     {
       username: 'AmyUnoShafer',
       birthday: new Date('12/05/1986'),
-      status: 'active',
+      isActive: false,
       roles: ['admin', 'member'],
       memberSince: new Date('10/01/2020'),
       leftIn: null,
@@ -38,7 +38,7 @@ async function seed() {
     {
       username: 'DaveMcManus',
       birthday: null,
-      status: 'active',
+      isActive: false,
       roles: ['member'],
       memberSince: new Date('08/17/2022'),
       leftIn: null,
@@ -52,7 +52,7 @@ async function seed() {
     {
       username: 'DawnFallik',
       birthday: null,
-      status: 'inactive',
+      isActive: true,
       roles: ['member'],
       memberSince: new Date('06/10/2021'),
       leftIn: new Date('07/01/2022'),
@@ -64,9 +64,9 @@ async function seed() {
       socials: []
     },
     {
-      username: 'DianaDOrazio',
+      username: 'DianaD\'Orazio',
       birthday: null,
-      status: 'active',
+      isActive: true,
       roles: ['member'],
       memberSince: new Date('10/01/2020'),
       leftIn: null,
@@ -80,7 +80,7 @@ async function seed() {
     {
       username: 'DougReinford',
       birthday: null,
-      status: 'active',
+      isActive: true,
       roles: ['member'],
       memberSince: new Date('04/07/2025'),
       leftIn: null,
@@ -94,7 +94,7 @@ async function seed() {
     {
       username: 'ErikLastname',
       birthday: null,
-      status: 'active',
+      isActive: false,
       roles: ['member'],
       memberSince: new Date('05/06/2021'),
       leftIn: null,
@@ -108,7 +108,7 @@ async function seed() {
     {
       username: 'JaredLenin',
       birthday: null,
-      status: 'active',
+      isActive: false,
       roles: ['member'],
       memberSince: new Date('04/22/2025'),
       leftIn: null,
@@ -122,7 +122,7 @@ async function seed() {
     {
       username: 'JenniferLastname',
       birthday: null,
-      status: 'inactive',
+      isActive: false,
       roles: ['member'],
       memberSince: new Date('01/05/2022'),
       leftIn: new Date('01/26/2022'),
@@ -136,7 +136,7 @@ async function seed() {
     {
       username: 'JohannaWainscott',
       birthday: null,
-      status: 'inactive',
+      isActive: false,
       roles: ['member'],
       memberSince: new Date('06/10/2021'),
       leftIn: new Date('07/01/2022'),
@@ -150,7 +150,7 @@ async function seed() {
     {
       username: 'JohnCecilPrice',
       birthday: null,
-      status: 'goneButNotForgotten',
+      isActive: false,
       roles: ['member'],
       memberSince: new Date('10/01/2020'),
       leftIn: new Date('07/10/2021'),
@@ -164,7 +164,7 @@ async function seed() {
     {
       username: 'JoshLastname',
       birthday: null,
-      status: 'active',
+      isActive: false,
       roles: ['member'],
       memberSince: new Date('05/29/2024'),
       leftIn: null,
@@ -178,7 +178,7 @@ async function seed() {
     {
       username: 'JuliaLastname',
       birthday: null,
-      status: 'inactive',
+      isActive: false,
       roles: ['member'],
       memberSince: new Date('01/15/2021'),
       leftIn: new Date('04/29/2021'),
@@ -192,7 +192,7 @@ async function seed() {
     {
       username: 'KellyKinzey',
       birthday: null,
-      status: 'inactive',
+      isActive: false,
       roles: ['member'],
       memberSince: new Date('01/26/2022'),
       leftIn: new Date('01/11/2023'),
@@ -206,7 +206,7 @@ async function seed() {
     {
       username: 'LaurenGervasio',
       birthday: null,
-      status: 'inactive',
+      isActive: false,
       roles: ['member'],
       memberSince: new Date('06/10/2021'),
       leftIn: new Date('11/24/2021'),
@@ -220,7 +220,7 @@ async function seed() {
     {
       username: 'ReynaHowkins',
       birthday: null,
-      status: 'active',
+      isActive: true,
       roles: ['member'],
       memberSince: new Date('10/01/2020'),
       leftIn: null,
@@ -234,7 +234,7 @@ async function seed() {
     {
       username: 'RuthSchanbacher',
       birthday: null,
-      status: 'active',
+      isActive: true,
       roles: ['member'],
       memberSince: new Date('10/06/2021'),
       leftIn: null,
@@ -248,7 +248,160 @@ async function seed() {
   ]);
 
   const movies = await db.movies.insertMany([
-    // add your movie data here
+    {
+     movieTitle: 'The Swimmer',
+     movieReleaseYear: 1968,
+     genre: 'Drama',
+     viewingNumber: 1,
+     dateViewed: new Date(10/01/2020),
+     picker: 'JohnCecilPrice',
+     memberRating: null,
+     currentlyStreaming: null,
+     season: "Season 1"
+    },
+     {
+      movieTitle: 'World\'s Greatest Dad',
+      movieReleaseYear: 2009,
+      genre: ['Comedy', 'Drama', 'Dark Comedy' ],
+      viewingNumber: 2,
+      dateViewed: new Date(10/08/2020),
+      picker: 'AmyUnoShafer',
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 1"
+     },
+     {
+      movieTitle: 'What Ever Happened to Baby Jane?',
+      movieReleaseYear: 1962,
+      genre: ['Drama', 'Melodrama', 'Thriller', 'Camp-tastic', 'Cult Classics', 'Horror', 'Psychological Thriller', 'Gay Cinema', 'Iconic'],
+      viewingNumber: 3,
+      dateViewed: new Date(10/15/2020),
+      picker: 'DianaD\'Orazio',
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 1"
+     },
+     {
+      movieTitle: 'THX 1138',
+      movieReleaseYear: 1971,
+      genre: ['Sci-fi'],
+      viewingNumber: 4,
+      dateViewed: new Date(10/23/2020),
+      picker: 'JohnCecilPrice',
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 1"
+     },
+     {
+      movieTitle: 'American Werewolf in London',
+      movieReleaseYear: 1981,
+      genre: ['Sci-fi'],
+      viewingNumber: 5,
+      dateViewed: new Date(10/29/2020),
+      picker: 'DianaD\'Orazio',
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 1"
+     },
+     {
+      movieTitle: 'Housebound',
+      movieReleaseYear: 2014,
+      genre: ['Horror', 'Comedy', 'Horror-Comedy', 'Dark Comedy'],
+      viewingNumber: 6,
+      dateViewed: new Date(11/5/2020),
+      picker: 'AmyUnoShafer',
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 1"
+     },
+     {
+      movieTitle: 'Drugstore Cowboy',
+      movieReleaseYear: 1989,
+      genre: ['Drama'],
+      viewingNumber: 7,
+      dateViewed: new Date(11/5/2020),
+      picker: 'ReynaHowkins',
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 1"
+     },
+     {
+      movieTitle: 'Animal House',
+      movieReleaseYear: 1978,
+      genre: ['Comedy'],
+      viewingNumber: 8,
+      dateViewed: new Date(11/19/2020),
+      picker: 'JohnCecilPrice',
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 1"
+     },
+     {
+      movieTitle: 'Endless Love',
+      movieReleaseYear: 1981,
+      genre: ['Drama'],
+      viewingNumber: 8,
+      dateViewed: new Date(11/25/2020),
+      picker: 'DianaD\'Orazio',
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 1"
+     },
+     {
+      movieTitle: 'The Great Dictator',
+      movieReleaseYear: 1940,
+      genre: ['Drama'],
+      viewingNumber: 10,
+      dateViewed: new Date(12/01/2020),
+      picker: 'AmyUnoShafer',
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 1"
+     },
+     {
+      movieTitle: 'Moonstruck',
+      movieReleaseYear: 1987,
+      genre: ['Comedy', 'Romance'],
+      viewingNumber: 11,
+      dateViewed: new Date(12/10/2020),
+      picker: 'ReynaHowkins',
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 1"
+     },
+     {
+      movieTitle: 'The Shop Around the Corner',
+      movieReleaseYear: 1940,
+      genre: ['Comedy', 'Romance', 'Classics'],
+      viewingNumber: 12,
+      dateViewed: new Date(12/17/2020),
+      picker: 'DianaD\'Orazio',
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 1"
+     },
+     {
+      movieTitle: 'Trading Places',
+      movieReleaseYear: 1983,
+      genre: ['Comedy'],
+      viewingNumber: 13,
+      dateViewed: new Date(12/23/2020),
+      picker: 'JohnCecilPrice',
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 1"
+     },
+     {
+      movieTitle: 'Grey Gardens',
+      movieReleaseYear: 1975,
+      genre: ['Documentary', 'Comedy', 'Camp-tastic', 'Cult Classics', 'Gay Cinema' ] ,
+      viewingNumber: 14,
+      dateViewed: new Date(12/30/2020),
+      picker: 'AmyUnoShafer',
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 1"
+     },
   ]);
 
   const merch = await db.merch.insertMany([
