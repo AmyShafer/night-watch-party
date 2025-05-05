@@ -1,45 +1,74 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Provider }  from 'react-redux';
-
-import client from './apolloClient'  // Apollo client config
-import store from './utils/store'; // Redux store
+import PublicNav from './components/common/Navbar/PublicNavbar.js';
+import UserNavbar from './components/common/Navbar/UserNavbar.js';
 
 // Public Pages
-import Home from './pages/Home';
-import About from './pages/About';
-import Login from './pages/Login';
-import Movies from './pages/Movies';
-import MovieGroupHowTo from './pages/MovieGroupHowTo';
+import Home from './pages/Home.js';
+import About from './pages/About.js';
+import Login from './pages/Login.js';
+import Movies from './pages/Movies.js';
+import MovieGroupHowTo from './pages/MovieGroupHowTo.js';
+import Signup from './pages/Signup.js';
 
 // Members Only Pages
-import UserHome from './pages/UserHome';
-import Profile from './pages/Profile';
-import Members from './pages/Members';
-import Movies from './pages/Movies';
-import Merch from './pages/Merch';
-import Notifications from './pages/Notifications';
+import UserHome from './pages/UserHome.js';
+import Profile from './pages/Profile.js';
+import Members from './pages/Members.js';
+import MemberMovies from './pages/MemberMovies.js'; // rename if needed
+import Merch from './pages/Merch.js';
+import Notifications from './pages/Notifications.js';
+import SendInvite from './pages/SendInvite.js';
 
-function PrivateRoute({children }) {
-  const loggedIn = userSelector((state) => state.auth.loggedIn);
-  return loggedIn ? children : <Navigate to="/login" />;
-}
+function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
 
-function PublicApp() {
-  return {
-    <>
-      <Nav />
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    setLoggedIn(!!token);
+  }, []);
+
+  const handleLogin = (token) => {
+    localStorage.setItem('token', token);
+    setLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setLoggedIn(false);
+  };
+
+  return (
+    <Router>
+      {loggedIn ? (
+        <UserNavbar onLogout={handleLogout} />
+      ) : (
+        <PublicNav />
+      )}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login"> element={<Login />} />
-        <Route path="/movies"> element={<Movies />} />
-        <Route path="MovieGroupHowTo" element={<MovieGroupHowTo />} />
-  </>
+        {!loggedIn ? (
+          <>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login onLogin={handleLogin} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/how-to" element={<MovieGroupHowTo />} />
+            <Route path="/signup" element={<Signup />} />
+          </>
+        ) : (
+          <>
+            <Route path="/user" element={<UserHome />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/members" element={<Members />} />
+            <Route path="/movies" element={<MemberMovies />} />
+            <Route path="/merch" element={<Merch />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/invite" element={<SendInvite />} />
+          </>
+        )}
+      </Routes>
+    </Router>
   );
 }
-
-function 
 
 export default App;
