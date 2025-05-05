@@ -6,17 +6,17 @@ import Members from 'Members.js';
 import Movies from 'Movies.js';
 import Merch from 'Merch.js';
 
-const Movies = () => {
+const SendInvite = () => {
     return (
-        <div className = "container">
-            <UserHome />
-            <Profile />
-            <Notifications />
-            <Members />
-            <Movies />
-            <Merch />
+        <div className = "container" >
+          <UserHome />
+          <Profile />
+          <Notifications />
+          <Members />
+          <Movies />
+          <Merch />
         </div>
     );
 }
 
-export default Movies;
+export default SendInvite;
