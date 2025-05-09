@@ -106,7 +106,7 @@ async function seed() {
       socials: []
     },
     {
-      username: 'JaredLenin',
+      username: 'JohnLenin',
       birthday: null,
       isActive: false,
       roles: ['member'],
@@ -162,7 +162,7 @@ async function seed() {
       socials: ['Facebook', 'Twitter']
     },
     {
-      username: 'JoshLastname',
+      username: 'JoshBowie',
       birthday: null,
       isActive: false,
       roles: ['member'],
@@ -176,7 +176,7 @@ async function seed() {
       socials: ['Facebook']
     },
     {
-      username: 'JuliaLastname',
+      username: 'JuliaGuest',
       birthday: null,
       isActive: false,
       roles: ['member'],
@@ -253,86 +253,101 @@ async function seed() {
      movieTitle: 'The Swimmer',
      movieReleaseYear: 1968,
      genre: 'Drama',
-     tags: [ ],
-     director: [ ],
-     writer: [ ],
-     cast: [ ],
-     accolades: [ ], 
+     rating: 'PG',
+     runtime: '1hr 35m', 
+     director: [ 'Frank Perry' ],
+     writer: [ 'Eleanor Perry' ],
+     cast: [ 'Burt Lancaster' , 'Janet Landgard' , 'Janice Rule' , 'Joan Rivers' ],
+     accolades: [], 
+     releaseDate: new Date('05/15/1968') , 
+     tags: [ 'cult classic' , 'psychological drama' , 'surreal' , 'experimental' , 'satire' , 'allegorical' , 'midlife crisis' , 'suburbia' , 'existentialism' , 'american dream' , 'one-day narrative' , 'john cheever' ] ,
      viewingNumber: 1,
      dateViewed: new Date('10/01/2020'),
      picker: 'JohnCecilPrice',
      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
      memberRating: null,
      currentlyStreaming: null,
-     season: "Season 1"
+     season: 'Season 1'
     },
      {
-      movieTitle: 'World\'s Greatest Dad',
+      movieTitle: 'World\'s Greatest Dad' ,
       movieReleaseYear: 2009,
-      genre: ['Comedy', 'Drama', 'Dark Comedy' ],
-      tags: [ ],
-      director: [ ],
-      writer: [ ],
-      cast: [ ],
-      accolades: [ ], 
+      genre: [ 'Comedy' , 'Drama' ] ,
+      rating: 'R' ,
+      runtime: '1hr 39m' , 
+      director: [ 'Bobcat Goldthwait' ] ,
+      writer: [ 'Bobcat Goldthwait' ] ,
+      cast: ['Robin Williams' , 'Daryl Sabara' , 'Alexie Gilmore' , 'Evan Martin' , 'Lorraine Nicholson' , 'Henry Simmons' , 'Geoff Pierson' ] ,
+      accolades: [ ] , 
+      releaseDate: new Date('08/21/2009'),
+      tags: [ 'dark comedy' , 'satire' , 'tragicomedy' , 'indie' , 'grief' , 'internet fame' , 'creative writing' , 'high school' , 'single parent' , 'underrated' ] ,
       viewingNumber: 2,
-      dateViewed: new Date('10/08/2020'),
+      dateViewed: new Date('10/08/2020') ,
       picker: 'AmyUnoShafer',
       attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins' ] ,
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 1"
+      season: 'Season 1'
      },
      {
       movieTitle: 'What Ever Happened to Baby Jane?',
       movieReleaseYear: 1962,
-      genre: ['Drama', 'Melodrama', 'Thriller', 'Camp-tastic', 'Cult Classics', 'Horror', 'Psychological Thriller', 'Gay Cinema', 'Iconic'],
-      tags: [ ],
-      director: [ ],
-      writer: [ ],
-      cast: [ ],
-      accolades: [ ], 
+      genre: ['Drama', 'Horror'],
+      rating: 'Not Rated',
+      runtime: '2h 12m',
+      director: [ 'Robert Aldrich' ],
+      writer: [ 'Lukas Heller' ],
+      cast: [ 'Bette Davis' , 'Joan Crawford' , 'Victor Buono' ],
+      accolades: [ 'oscar-winner' , 'oscar-nominated' , 'cannes-nominated' , 'golden globe-nominated'], 
+      releaseDate: new Date('10/31/1062'),
+      tags: [ 'black and white' , 'classic' , 'iconic' , 'cult classic' , 'campy' , 'gay cinema' , 'sibling rivalry' , 'child star' , 'infamous' , 'hagsploitation' ],
       viewingNumber: 3,
       dateViewed: new Date('10/15/2020'),
       picker: 'DianaD\'Orazio',
       attendees: [ 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 1"
+      season: 'Season 1'
      },
      {
       movieTitle: 'THX 1138',
       movieReleaseYear: 1971,
-      genre: ['Sci-Fi', 'Thriller', 'Drama', 'Dystopian Sci-Fi'],
-      tags: [ ],
-      director: [ ],
-      writer: [ ],
-      cast: [ ],
-      accolades: [ ], 
+      genre: ['Sci-Fi' , 'Thriller' , 'Drama' , 'Dystopian Sci-Fi' ],
+      rating: 'GP',
+      runtime: '1h 26m',
+      director: [ 'George Lucas' ],
+      writer: [ 'George Lucas' , 'Walter Murch'],
+      cast: [ 'Robert Duvall' , 'Maggie McOmie' , 'Donald Pleasence' , 'Ian Wolfe' , 'Don Pedro Colley'],
+      accolades: [ 'cannes-nominated' ], 
+      releaseDate: new Date('03/11/1971'),
+      tags: [ 'directorial debut' , 'avant-garde' , 'arty' , 'experimental' , 'cyber punk' , 'totalitarianism' , 'drones' , 'counterculture'],
       viewingNumber: 4,
       dateViewed: new Date('10/23/2020'),
       picker: 'JohnCecilPrice',
       attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 1"
+      season: 'Season 1'
      },
      {
       movieTitle: 'American Werewolf in London',
       movieReleaseYear: 1981,
-      genre: ['Fantasy','Comedy', 'Horror', 'Horror-Comedy', 'Dark Comedy'],
-      tags: [ ],
-      director: [ ],
-      writer: [ ],
-      cast: [ ],
-      accolades: [ ], 
+      genre: ['Body Horror' , 'Buddy Comedy' , 'Dark Comedy' , 'Supernatural Horror' , 'Werewolf Horror' , 'Comedy' , 'Horror'],
+      rating: 'R',
+      runtime: '1hr 37m',
+      director: [ 'John Landis' ],
+      writer: [ 'John Landis' ],
+      cast: [ 'David Naughton' , 'Jenny Agutter' , 'Joe Belcher' ],
+      accolades: [ 'oscar-winner' ], 
+      tags: [ 'werewolf' , 'horror-comedy' , 'cult classic' , 'dark comedy' ],
+      releaseDate: new Date ('08/21/1981'),
       viewingNumber: 5,
       dateViewed: new Date('10/29/2020'),
       picker: 'DianaD\'Orazio',
       attendees: [ 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 1"
+      season: 'Season 1'
      },
      {
       movieTitle: 'Housebound',
@@ -349,7 +364,7 @@ async function seed() {
       attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 1"
+      season: 'Season 1'
      },
      {
       movieTitle: 'Drugstore Cowboy',
@@ -366,7 +381,7 @@ async function seed() {
       attendees: [ 'ReynaHowkins', 'AmyUnoShafer', 'JohnCecilPrice', 'DianaD\'Orazio' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 1"
+      season: 'Season 1'
      },
      {
       movieTitle: 'National Lampoon\'s Animal House',
@@ -383,7 +398,7 @@ async function seed() {
       attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 1"
+      season: 'Season 1'
      },
      {
       movieTitle: 'Endless Love',
@@ -400,7 +415,7 @@ async function seed() {
       attendees: [ 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 1"
+      season: 'Season 1'
      },
      {
       movieTitle: 'The Great Dictator',
@@ -417,7 +432,7 @@ async function seed() {
       attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 1"
+      season: 'Season 1'
      },
      {
       movieTitle: 'Moonstruck',
@@ -434,7 +449,7 @@ async function seed() {
       attendees: [ 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 1"
+      season: 'Season 1'
      },
      {
       movieTitle: 'The Shop Around the Corner',
@@ -451,7 +466,7 @@ async function seed() {
       attendees: [ 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 1"
+      season: 'Season 1'
      },
      {
       movieTitle: 'Trading Places',
@@ -468,7 +483,7 @@ async function seed() {
       attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 1"
+      season: 'Season 1'
      },
      {
       movieTitle: 'Grey Gardens',
@@ -485,7 +500,7 @@ async function seed() {
       attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 1"
+      season: 'Season 1'
      },
      // Season 2
      {
@@ -503,7 +518,7 @@ async function seed() {
       attendees: [ 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      },
      {
       movieTitle: 'Best in Show',
@@ -520,7 +535,7 @@ async function seed() {
       attendees: [ 'Julia','ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      },
      {
       movieTitle: 'Me Without You',
@@ -537,7 +552,7 @@ async function seed() {
       attendees: [ 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      },
      {
       movieTitle: 'After Hours',
@@ -554,7 +569,7 @@ async function seed() {
       attendees: [ 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      },
      {
       movieTitle: 'The History of Future Folk',
@@ -571,7 +586,7 @@ async function seed() {
       attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Great Expectations',
@@ -588,7 +603,7 @@ async function seed() {
       attendees: [ 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Casablanca',
@@ -605,7 +620,7 @@ async function seed() {
       attendees: [ 'Julia', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Roman Holiday',
@@ -622,7 +637,7 @@ async function seed() {
       attendees: [ 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice', 'Julia' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'The Brother from Another Planet',
@@ -639,7 +654,7 @@ async function seed() {
       attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Woman in Gold',
@@ -656,7 +671,7 @@ async function seed() {
       attendees: [ 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'No Way to Treat a Lady',
@@ -673,7 +688,7 @@ async function seed() {
       attendees: [ 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Raising Arizona',
@@ -690,7 +705,7 @@ async function seed() {
       attendees: [ 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Enchanted April',
@@ -707,7 +722,7 @@ async function seed() {
       attendees: [ 'DianaD\'Orazio', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Romy and Michele\’s High School Union',
@@ -724,7 +739,7 @@ async function seed() {
       attendees: [ 'Julia', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      },
      {
       movieTitle: 'Trixie Mattel: Moving Parts',
@@ -741,7 +756,7 @@ async function seed() {
       attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins', 'Julia' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Strictly Ballroom',
@@ -758,7 +773,7 @@ async function seed() {
       attendees: [ 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Promising Young Woman',
@@ -775,7 +790,7 @@ async function seed() {
       attendees: ['ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio', 'JohnCecilPrice'],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Charade',
@@ -792,7 +807,7 @@ async function seed() {
       attendees: [ 'LaurenEvans', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'City Slickers',
@@ -809,7 +824,7 @@ async function seed() {
       attendees: [ 'ErikEvans', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Desperately Seeking Susan',
@@ -826,7 +841,7 @@ async function seed() {
       attendees: [ 'JohnCecilPrice', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'The House Bunny',
@@ -843,7 +858,7 @@ async function seed() {
       attendees: [ 'DawnFallik', 'ReynaHowkins', 'AmyUnoShafer',  'JohnCecilPrice' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Private Benjamin',
@@ -860,7 +875,7 @@ async function seed() {
       attendees: [ 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'The Princess Bride',
@@ -877,7 +892,7 @@ async function seed() {
       attendees: [ 'LaurenGervasio', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Muriel\'s Wedding',
@@ -894,7 +909,7 @@ async function seed() {
       attendees: [ 'DianaD\'Orazio', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Only Lovers Left Alive',
@@ -905,14 +920,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 39,
       dateViewed: new Date('08/19/2021'),
       picker: 'BeckyWells',
       attendees: [ 'BeckyWells' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Clue',
@@ -923,14 +938,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 40,
       dateViewed: new Date('08/26/2021'),
       picker: 'ReynaHowkins',
       attendees: [ 'ReynaHowkins', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'The Shining',
@@ -943,7 +958,7 @@ async function seed() {
       attendees: [ 'LaurenEvans', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Hair Love',
@@ -954,14 +969,14 @@ async function seed() {
       writer: [ ],
       cast: [],
       accolades: [], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 42,
       dateViewed: new Date('09/10/2021'),
       picker: 'DawnFallik',
       attendees: [ 'DawnFallik', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Two Distant Strangers',
@@ -972,14 +987,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 43,
       dateViewed: new Date('09/10/2021'),
       picker: 'DawnFallik',
       attendees: [ 'DawnFallik', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Office Space',
@@ -990,14 +1005,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 44,
       dateViewed: new Date('09/16/2021'),
       picker: 'ErikEvans',
       attendees: [ 'ErikEvans', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Screwed',
@@ -1008,14 +1023,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 44,
       dateViewed: new Date('09/22/2021'),
       picker: 'AmyUnoShafer',
       attendees: [ 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Baby Mama',
@@ -1026,14 +1041,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 45,
       dateViewed: new Date('09/29/2021'),
       picker: 'LaurenGervasio',
       attendees: [ 'LaurenGervasio', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Asenic and Old Lace',
@@ -1051,7 +1066,7 @@ async function seed() {
       attendees: [ 'DianaD\'Orazio', 'AmyUnoShafer', 'ReynaHowkins' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Edward Scissorhands',
@@ -1069,7 +1084,7 @@ async function seed() {
       attendees: [ 'DianaD\'Orazio', 'AmyUnoShafer', 'ReynaHowkins' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'What We Do In Shadows',
@@ -1080,14 +1095,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020'),
+      releaseDate: new Date('01/01/2020'),
       viewingNumber: 48, 
       dateViewed: new Date('10/20/2021'),
       picker: 'LaurenEvans',
       attendees: [ 'LaurenEvans', 'DianaD\'Orazio', 'AmyUnoShafer', 'ReynaHowkins' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      },
      {
       movieTitle: 'Young Frankenstein',
@@ -1098,14 +1113,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 49,
       dateViewed: new Date('10/27/2021'),
       picker: 'AmyUnoShafer',
       attendees: [ 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Labyrinth',
@@ -1116,14 +1131,14 @@ async function seed() {
       writer: [ ],
       cast: [],
       accolades: [], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 50,
       dateViewed: new Date('11/03/2021'),
       picker: 'DawnFallik',
       attendees: [ 'DawnFallik', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      },
      {
       movieTitle: 'American Graffiti',
@@ -1134,14 +1149,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 51,
       dateViewed: new Date('11/09/2021'),
       picker: 'ErikEvans',
       attendees: [ 'ErikEvans', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      },  
      {
       movieTitle: 'The Greatest Showman',
@@ -1152,14 +1167,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 52,
       dateViewed: new Date('11/17/2021'),
       picker: 'LaurenGervasio',
       attendees: [ 'LaurenGervasio', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      },  
      {
       movieTitle: 'The Adventures of Baron Munchausen',
@@ -1170,14 +1185,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 53,
       dateViewed: new Date('11/24/2021'),
       picker: 'RuthSchanbacher',
       attendees: [ 'RuthSchanbacher', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Die Hard',
@@ -1188,14 +1203,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 54,
       dateViewed: new Date('12/01/2021'),
       picker: 'LaurenEvans',
       attendees: [ 'LaurenEvans', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'The Accidental Tourist',
@@ -1206,14 +1221,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 55,
       dateViewed: new Date('11/09/2021'),
       picker: 'LaurenEvans',
       attendees: [ 'LaurenEvans', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      },
      {
       movieTitle: 'Clueless',
@@ -1224,14 +1239,14 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 56,
       dateViewed: new Date('12/22/2021'),
       picker: 'ReynaHowkins',
       attendees: [ 'ReynaHowkins', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      }, 
      {
       movieTitle: 'Silver Streak',
@@ -1242,16 +1257,34 @@ async function seed() {
       writer: [ ],
       cast: [ ],
       accolades: [ ], 
-      releaseDate: newDate('01/01/2020') , 
+      releaseDate: new Date('01/01/2020') , 
       viewingNumber: 57,
       dateViewed: new Date('12/29/2021'),
       picker: 'AmyUnoShafer',
       attendees: [ 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 2"
+      season: 'Season 2'
      },   
      // Season 3
+     {
+      movieTitle: 'Tootsie',
+      movieReleaseYear: 1982,
+      genre: [ 'Comedy', ] ,
+      tags: [ ] ,
+      director: [ ],
+      writer: [ ],
+      cast: [ ],
+      accolades: [ ], 
+      releaseDate: newDate('01/01/2020') , 
+      viewingNumber: 58,
+      dateViewed: new Date('01/05/2022'),
+      picker: 'DawnFallik',
+      attendees: [ 'DawnFallik', 'AmyUnoShafer' ],
+      memberRating: null,
+      currentlyStreaming: null,
+      season: "Season 3"
+     },  
   ]);
 
   const merch = await db.merch.insertMany([
