@@ -28,5 +28,7 @@ const memberSchema = new Schema({
     memberEvent: [{
         type: Schema.Types.ObjectId,
         ref: 
-    }]
+    }],
 })
+
+module.exports = memberSchema;
