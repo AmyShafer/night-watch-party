@@ -1,31 +1,28 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Event, Member, MerchCategory, MerchOrder, Movie } = require('../models');
+const { 
+    Member, 
+    Event, 
+    Movie, 
+    MerchCategory, 
+    MerchProduct, 
+    MerchOrder 
+} = require('../models');
+
+// Example for fetching a user (?)
 
 const resolvers = {
     Query: {
-        categories: async () => {
-            return await Category.find();
+        member: (parent, args) => {
+          return memberSchema.find(member => member.id === args.id);
         },
-        products: async (parent, { category, name }) {
-            const params = {};
+    },
 
-            if (category) {
-                params.category = category;
-            }
-
-            if (name) {
-                params.name = {
-                  $regex: name
-                };
-            }
-
-            return await Product.find(params).populate('category');
+    // Example for fetching a movie (?)
+    Query: {
+        movie: (parent, args) => {
+            return movieSchema.find(movie => movie.id === args.id)
         },
-        product: async (parent, { _id }) => {
-            return await
-    Product.findById
-        }
-    }
+    },
 };
 
 model.exports = resolvers; 

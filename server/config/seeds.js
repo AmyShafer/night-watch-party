@@ -1430,7 +1430,7 @@ async function seed() {
       director: [ 'Kirk Jones' ],
       writer: [ 'Kirk Jones' ],
       cast: [ 'Ian Bannen' , 'David Kelly' , 'Fionnula Flanagan' , 'Susan Lynch' , 'James Nesbitt'],
-      accolades: [ 'BAFTA-nominated' ], 
+      accolades: [ 'BAFTA Nominee' ], 
       releaseDate: new Date('11/20/1998'), 
       tags: [ 'indie' , 'heartwarming' , 'buddy movie' , 'sweet' , 'irish' , 'cult classic' , 'underrated' ] ,
       viewingNumber: 60,
