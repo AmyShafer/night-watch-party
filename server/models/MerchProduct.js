@@ -6,7 +6,7 @@ const merchProductSchema = new Schema({
     name: {
         type: String,
         required: true,
-        trim
+        trim: true
     },
     description: {
         type: String
