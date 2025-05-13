@@ -25,10 +25,15 @@ const memberSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Pick',
     }, ],
-    memberEvent: [{
+    memberEvents: [{
         type: Schema.Types.ObjectId,
-        ref: 
-    }],
-})
+        ref: 'Event',
+    }, ],
+  }, {
+    toJSON: {
+        virtuals: true,
+    },
+    id: false,
+});
 
 module.exports = memberSchema;

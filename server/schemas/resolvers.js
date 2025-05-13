@@ -1,6 +1,5 @@
-const { AuthenticationError } = require('apollo=server-express');
-const { User, Product, Category, Order } = require('../models');
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require('apollo-server-express');
+const { Event, Member, MerchCategory, MerchOrder, Movie } = require('../models');
 
 const resolvers = {
     Query: {
@@ -27,4 +26,6 @@ const resolvers = {
     Product.findById
         }
     }
-}
+};
+
+model.exports = resolvers; 
