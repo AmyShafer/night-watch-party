@@ -10,16 +10,41 @@ const typeDefs = gql`
     _id: ID
     userName: String
     email: String
-    birthday: String
+    birthday: [Birthday]
     isActive: Boolean
-    roles: String
-    memberSince: String
-    leftIn: String
+    roles: [Role]
+    memberSince: [startDate]
+    leftIn: [endDate]
     firstPickedMovie: String
     lastPickedMovie: String 
-    favoriteMovies: String
-    memberStats: String
+    favoriteMovies: [memberFavorites]
+    memberStats: [memberStat]
     currentRSVP: String
-    socials: String
+    socials: [Social]
   }
 
+  type Movie {
+    _id: ID
+    movieTitle: String
+    movieReleaseYear: Int
+    genres: [Genre]
+    rating: String
+    runtime: String
+    director: [Director]
+    writer: [Writer]
+    cast: [Cast]
+    accolades: [Accolade] 
+    releaseDate: [ReleaseDate] 
+    tags: [Tag] ,
+    viewingNumber: Int,
+    dateViewed: [ViewDate]
+    // or user id?
+    picker: String 
+    attendees: [Attendee]
+    memberRating: Float
+    currentlyStreaming: [Streaming]
+    season: String
+  }
+`;
+
+module.exports = typeDefs;

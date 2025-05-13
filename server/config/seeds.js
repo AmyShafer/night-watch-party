@@ -1399,7 +1399,7 @@ async function seed() {
       attendees: [ 'DawnFallik', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 3"
+      season: 'Season 3'
      },  
      {
       movieTitle: 'Scott Pilgrim vs the World',
@@ -1419,7 +1419,7 @@ async function seed() {
       attendees: [ 'RuthSchanbacher', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 3"
+      season: 'Season 3'
      },  
      {
       movieTitle: 'Waking Ned Devine',
@@ -1439,7 +1439,7 @@ async function seed() {
       attendees: [ 'JenniferO\'Shea', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
-      season: "Season 3"
+      season: 'Season 3'
      },  
   ]);
 
