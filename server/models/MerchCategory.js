@@ -10,6 +10,6 @@ const MerchCategorySchema = new Schema({
     }
 });
 
-const MerchCategory = mongoose.model('MerchCatergory' , MerchCategorySchema);
+const MerchCategory = mongoose.model('MerchCategory', MerchCategorySchema);
 
 module.exports = MerchCategory;

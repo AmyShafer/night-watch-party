@@ -30,10 +30,7 @@ const memberSchema = new Schema({
         ref: 'Event',
     }, ],
   }, {
-    toJSON: {
-        virtuals: true,
-    },
-    id: false,
+    id: true,
 });
 
 module.exports = memberSchema;
