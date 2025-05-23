@@ -11,6 +11,6 @@ const {
 router.route('/').get(getMerchCategories).post(createMerchCategory);
 
 // /api/merchCategories/:merchCategoryId
-router.route('/:merchCategoryId').get(getSingleMerchCategory).put(updateMerchCategory).delete(deleteMerchCategory);
+router.route('/:merchCategoryId').get(getSingleMerchCategory).put(updateMerchCategory)/*.delete(deleteMerchCategory)*/;
 
 module.exports = router;

@@ -18,6 +18,6 @@ const MerchOrderSchema = new Schema({
 });
 
 // Initialize to MerchOrder model
-const MerchOrder = mongoose.model('MerchOrder', MerchOrderSchema);
+const MerchOrder = model('MerchOrder', MerchOrderSchema);
 
 module.exports = MerchOrder;
