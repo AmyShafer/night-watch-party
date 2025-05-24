@@ -6,6 +6,7 @@ const {
   updateMovie,
   deleteMovie,
   addRating,
+  changeRating,
   removeRating
 } = require('../../controllers/movie-controller');
 
@@ -17,6 +18,9 @@ router.route('/:movieId').get(getSingleMovie).put(updateMovie).delete(deleteMovi
 
 // /api/movies/:movieId/ratings
 router.route(':/movieId/ratings').post(addRating);
+
+// /api/movies/:movieId/ratings/:ratingId
+router.route('/:movieId/ratings/:ratingId').put(changeRating);
 
 // /api/movies/:movieId/ratings/:ratingId
 router.route('/:movieId/ratings/:ratingId').delete(removeRating);

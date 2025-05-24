@@ -5,7 +5,7 @@ const {
     createMember,
     updateMember,
     deleteMember,
-    activateMember
+    isMemberActive,
 } = require('../../controllers/member-controller');
 
 // /api/members
@@ -14,7 +14,7 @@ router.route('/').get(getMembers).post(createMember);
 // /api/members/:memberID
 router.route('/:memberId').get(getSingleMember).put(updateMember).delete(deleteMember);
 
-// /api/members/:memberId/statusUpdate
-router.route('/:memberId/status/activate').post(activateMember);
+// /api/members/:memberId/isMemberActive
+router.route('/:memberId/isMemberActive').put(isMemberActive);
 
 module.exports = router;

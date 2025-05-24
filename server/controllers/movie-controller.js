@@ -50,24 +50,13 @@ function createMovie(req, res) {
     });
 }
 
-// delete movie
-function  deleteMovie(req, res) {
-        Movie.findOneAndRemove({ _id: req.params.movieId })
-            .then((dbMovieData) => {
-            if (!dbMovieData) {
-                return res.status(404).json({ message: 'No movie with this id!' });
-            }
-            res.json({ message: 'Movie was successfully created!' });
-            })
-            .catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-            });
-}
-        
 // update a movie
 function updateMovie(req, res) {
-    Movie.findOneAndUpdate({ _id: req.params.movieId }, { $set: req.body }, { runValidators: true, new: true })
+    Movie.findOneAndUpdate(
+        { _id: req.params.movieId },
+        { $set: req.body },
+        { runValidators: true, new: true }
+    )
     .then((dbMovieData) => {
         if(!dbMovieData) {
             return res.status(404).json({ message: 'No movie with this id!' });
@@ -79,8 +68,23 @@ function updateMovie(req, res) {
         res.status(500).json(err);
     });
 }
-            
-// add a rating to a thought
+
+// delete movie
+function  deleteMovie(req, res) {
+    Movie.findOneAndRemove({ _id: req.params.movieId })
+    .then((dbMovieData) => {
+        if (!dbMovieData) {
+            return res.status(404).json({ message: 'No movie with this id!' });
+        }
+        res.json({ message: 'Movie was successfully created!' });
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+}
+
+// add a rating to a movie
 function addRating(req, res) {
     Movie.findOneAndUpdate(
         { _id: req.params.movieId },
@@ -99,8 +103,8 @@ function addRating(req, res) {
     });
 }
 
-// remove rating from movie
-function removeRating(req, res) {
+// change rating from movie
+function changeRating(req, res) {
     Movie.findOneAndUpdate(
         { _id: req.parms.movieId },
         { $pull: { ratings: { ratingId: req.params.ratingId } } },
@@ -118,6 +122,25 @@ function removeRating(req, res) {
     });
 }
 
+// remove rating from movie
+function removeRating(req, res) {
+    Movie.findOneAndUpdate(
+        { _id: req.prams.movieId },
+        { $pull: { reactions: { reactionId: req.params.ratingId } } },
+        { runValidators: true, new: true }
+    )
+    .then((dbMovieData) => {
+        if (!dbMovieData) {
+            return res.status(404).json({ message: 'No rating with this id!' });
+        }
+        res.json(dbMovieData);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+}
+
 module.exports = { 
     getMovies,
     getSingleMovie,
@@ -125,5 +148,6 @@ module.exports = {
     updateMovie,
     deleteMovie,
     addRating,
+    changeRating,
     removeRating,
  };

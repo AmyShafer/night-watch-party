@@ -5,8 +5,7 @@ const {
     createEvent,
     updateEvent,
     deleteEvent,
-    addRSVP,
-    removeRSVP,
+    updateRSVP
 } = require('../../controllers/event-controller');
 
 // /api/events
@@ -19,6 +18,6 @@ router/route('/:eventId').get(getSingleEvent).put(updateEvent).delete(deleteEven
 router.route('/:eventId/RSVPs').post(addRSVP);
 
 // /api/events/:eventId/RSVPs/:RSVPid
-router.route('/:eventId/RSVPs/:RSVPid').delete(removeRSVP);
+router.route('/:eventId/RSVPs/:RSVPid').delete(updateRSVP);
 
 module.exports = router;
