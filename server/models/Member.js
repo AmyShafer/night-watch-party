@@ -33,4 +33,6 @@ const memberSchema = new Schema({
     id: true,
 });
 
-module.exports = memberSchema;
+const Member = model('Member', memberSchema);
+
+module.exports = Member;

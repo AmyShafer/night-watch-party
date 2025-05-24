@@ -72,7 +72,7 @@ function deleteEvent(req, res) {
         if (!dbEventData) {
             return res.status(404).json({ message: 'No event with this id!' });
         }
-        res.json({ message: 'Event was successfully created!' });
+        res.json({ message: 'Event was removed!' });
     })
     .catch((err) => {
         console.log(err);

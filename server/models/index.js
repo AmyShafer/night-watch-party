@@ -11,5 +11,5 @@ module.exports = {
   Movie, 
   MerchCategory,
   MerchProduct,
-  MerchOrder
+  MerchOrder,
 };

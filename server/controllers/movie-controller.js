@@ -76,7 +76,7 @@ function  deleteMovie(req, res) {
         if (!dbMovieData) {
             return res.status(404).json({ message: 'No movie with this id!' });
         }
-        res.json({ message: 'Movie was successfully created!' });
+        res.json({ message: 'Movie was removed!' });
     })
     .catch((err) => {
         console.log(err);

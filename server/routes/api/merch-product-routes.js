@@ -4,7 +4,7 @@ const {
     getSingleMerchProduct,
     createMerchProduct,
     updateMerchProduct,
-    deleteMerchProduct
+    deleteMerchProduct,
 } = require('../../controllers/merch-product-controller');
 
 // /api/merchProducts

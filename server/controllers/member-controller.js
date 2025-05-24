@@ -1,4 +1,4 @@
-const { Member , Movie , Event } = require('../models');
+const { Member , Event } = require('../models');
 
 // get all members
 function getMembers(req, res) {
@@ -76,7 +76,7 @@ function deleteMember(req, res) {
         if (!dbMemberData) {
             return res.status(404).json({ message: 'No member with this id!' });
         }
-        res.json({ message: 'Member was successfully created!' });
+        res.json({ message: 'Member was removed!' });
     })
     .catch((err) => {
         console.log(err);

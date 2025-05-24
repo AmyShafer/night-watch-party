@@ -1,4 +1,4 @@
-const { MerchCategory, MerchOrder, MerchProduct } = require('../models');
+const { MerchCategory, MerchOrder, MerchProduct, Member } = require('../models');
 
 // get all categories
 function getMerchCategories(req, res) {
@@ -76,7 +76,7 @@ function deleteMerchCategory(req, res) {
       if(!dbMerchCategoryData) {
         return res.status(404).json({ message: 'No merch category with this id!' });
       }
-      res.json({ message: 'Merch Category was successfully created!' });
+      res.json({ message: 'Merch category was removed!' });
     })
     .catch((err) => {
         console.log(err);
