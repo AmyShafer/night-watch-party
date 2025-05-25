@@ -1,0 +1,20 @@
+:root {
+    --better-off-dead-red: #C8102E;
+    --but-im-a-cheerleader: #F86D52;
+    --horowitz-gold: #F7FB55;
+    --abby-normal-green: #8AF852;
+    --grey-gardens-green: #379d28;
+    --baby-jane-blue: #52DDF8;
+    --best-in-show-blue: #28379D;
+    --willkommen-violet: #C052F8;
+    --after-hours: #20032F;
+    --muriel-white: #F0EDF1;
+    --nakatomi-grey: #867B8C;
+    --soot-sprites: #130819;
+    --party-girl-pink: #F852DD;
+    --city-slickers-sienna: #954131;
+}
+
+body {
+    background-color: var(--after-hours);
+}
