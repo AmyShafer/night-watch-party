@@ -59,7 +59,7 @@ function updateMerchOrder(req, res) {
     )
     .then((dbMerchOrderData) => {
         if(!dbMerchOrderData) {
-            return res.status(404),json({ message: 'There is no order with this id!' })
+            return res.status(404).json({ message: 'There is no order with this id!' })
         }
         res.json(dbMerchOrderData);
     })
@@ -76,7 +76,7 @@ function deleteMerchOrder(req, res) {
         if(!dbMerchOrderData) {
             return res.status(404).json({ message: 'No order with this id!' });
         }
-        res.json({ message: 'Order was deleted' })
+        res.json({ message: 'Order was deleted' });
     })
     .catch((err) => {
         console.log(err);
