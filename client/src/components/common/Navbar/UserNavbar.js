@@ -1,22 +1,22 @@
 import React from 'react';
-import Profile from 'Profile.js';
-import Members from 'Members.js';
-import Movies from 'Movies.js';
+import Profile from 'pages/Profile.js';
+import Movies from 'pages/Movies.js';
+import Members from 'pages/Members';
+import Merch from 'pages/Merch.js';
 import Notifications from 'Notifications.js';
-import Merch from './page/Merch.js';
 
-const UserHome = () => {
+const UserNavBar = () => {
   return (
     <div className="container">
       <UserHome />
       <a href='/user' target='_blank'>Home</a>
       <Profile />
-      <Members />
       <Movies />
-      <Notifications />
+      <Members />
       <Merch />
+      <Notifications />
     </div>
   );
 };
 
-export default UserHome;
+export default UserNavBar;

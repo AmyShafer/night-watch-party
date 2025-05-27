@@ -1,19 +1,19 @@
 import React from 'react';
 import Profile from 'Profile.js';
-import Members from 'Members.js';
 import Movies from 'Movies.js';
-import Notifications from 'Notifications.js';
+import Members from 'Members.js';
 import Merch from 'Merch.js';
+import Notifications from 'Notifications.js';
 
 const UserHome = () => {
   return (
     <div className="container">
       <UserHome />
       <Profile />
-      <Members />
       <Movies />
-      <Notifications />
+      <Members />
       <Merch />
+      <Notifications />
     </div>
   );
 };

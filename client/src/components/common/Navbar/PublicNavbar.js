@@ -5,10 +5,8 @@ import Login from 'Login.js';
 const PublicNav = () => {
     return (
         <div className="container">
-          <Home />
+          <About />
           <Login />
-          <MovieGroupHowTo />
-          <Movies />
       </div>
     );
 };

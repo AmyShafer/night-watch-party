@@ -7,7 +7,7 @@ The Night Watch Party website was created to provide organization and communicat
 
 ## Table of Contents
 
-*[Technologies](#technologies)
+*[Technologies](#technologies) 
 *[Mockup](#mockup)
 
 ## Technologies

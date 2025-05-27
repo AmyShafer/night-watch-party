@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <div className="container">
       <Home />
-      <About.js />
+      <About />
     </div>
   );
 };
