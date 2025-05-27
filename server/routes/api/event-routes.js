@@ -12,10 +12,10 @@ const {
 router.route('/').get(getEvents).post(createEvent);
 
 // /api/events/:eventId
-router/route('/:eventId').get(getSingleEvent).put(updateEvent).delete(deleteEvent);
+router.route('/:eventId').get(getSingleEvent).put(updateEvent).delete(deleteEvent);
 
 // /api/events/:eventId/RSVPs
-router.route('/:eventId/RSVPs').post(addRSVP);
+router.route('/:eventId/RSVPs').put(updateRSVP);
 
 // /api/events/:eventId/RSVPs/:RSVPid
 router.route('/:eventId/RSVPs/:RSVPid').delete(updateRSVP);

@@ -1,4 +1,4 @@
-const { MerchCategory, MerchOrder, MerchProduct, MerchCategory } = require('../models');
+const { MerchCategory, MerchOrder, MerchProduct } = require('../models');
 
 // get all merch products
 function getMerchProducts(req, res) {
