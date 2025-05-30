@@ -1,12 +1,12 @@
 const db = require('./connection');
-const { Member, Movies, Merch } = require('../models');
+const { Member, Movie, Merch } = require('../models');
 
 db.once('open', async () => {
   await seed();
 });
 
 async function seed() {
-  const members = await db.members.insertMany([
+  const members = await Member.insertMany([
     {
       username: 'AlisonDilfer',
       birthday: null,
@@ -92,7 +92,7 @@ async function seed() {
       socials: [ 'Facebook' ]
     },
     {
-      username: 'DougReinford',
+      username: 'DouglasReinford',
       birthday: null,
       isActive: true,
       roles: [ 'member' ],
@@ -101,7 +101,7 @@ async function seed() {
       firstMoviePicked: 'Tsotsi',
       mostRecentMoviePicked: null,
       favoriteMovies: [ ],
-      memberStats: [ 'New Member' ],
+      memberStats: [ ],
       currentRSVP: 'Coming',
       socials: [ 'Facebook', 'Flickr' ]
     },
@@ -275,7 +275,7 @@ async function seed() {
     }
   ]);
 
-  const movies = await db.movies.insertMany([
+  const movies = await Movie.insertMany([
     // Season 1
     {
      movieTitle: 'The Swimmer',
@@ -297,7 +297,7 @@ async function seed() {
      currentlyStreaming: null,
      season: 'Season 1'
     },
-     {
+    {
       movieTitle: 'World\'s Greatest Dad' ,
       movieReleaseYear: 2009,
       genre: [ 'Comedy' , 'Drama' ] ,
@@ -1927,11 +1927,11 @@ async function seed() {
       rating: 'Not Rated',
       runtime: '1hr 57m',
       director: [ 'James Ivory' ],
-      writer: [  ],
-      cast: [ ],
-      accolades: [ 'Oscar Winner' ], 
+      writer: [ 'Ruth Prawer Jhabvala' ],
+      cast: [ 'Helena Bonham Carter' , 'Julian Sands' , 'Maggie Smith' , 'Judi Dench' , 'Denholm Elliott' , 'Daniel Day-Lewis' , 'Rupert Graves' , 'Rosemary Leach' ],
+      accolades: [ 'Oscar Winner' , 'Golden Globe Award Winner' , 'BAFTA Winner' , 'National Board of Review Awards Winner' ], 
       releaseDate: new Date('04/11/1986'), 
-      tags: [  ] ,
+      tags: [ 'sweet' , 'perfection' , 'british' , 'based on a book' , 'amazing soundtrack' , 'gentle' , 'travel' , 'indie' , 'low-budget' ] ,
       viewingNumber: 83,
       dateViewed: new Date('03/30/2022'),
       picker: 'DianaD\'Orazio',
@@ -2184,15 +2184,15 @@ async function seed() {
     {
       movieTitle: 'Being Julia',
       movieReleaseYear: 2004 ,
-      genre: [ 'Drama' ] ,
-      rating: '',
-      runtime: '',
-      director: [  ],
-      writer: [  ],
-      cast: [ ],
-      accolades: [  ], 
-      releaseDate: new Date(''), 
-      tags: [  ] ,
+      genre: [ 'Drama' , 'Comedy' ] ,
+      rating: 'R',
+      runtime: '1 hr 44m',
+      director: [ 'István Szabó' ],
+      writer: [ 'Ronald Harwood' ],
+      cast: [ 'Annette Bening' , 'Jeremy Irons' , 'Shaun Evans' , 'Lucy Punch' , 'Juliet Stevenson' , 'Miriam Margolyes' , 'Tom Sturridge' , 'Bruce Greenwood' , 'Rosemary Harris' , 'Rita Tushingham' ],
+      accolades: [ 'Oscar Nominee' , 'Golden Globe Winner' , 'Satellite Award Winner' , 'National Board of Review Award Winner' ], 
+      releaseDate: new Date('10/15/2004'), 
+      tags: [ 'melodramatic' , 'theater' , 'charming' ] ,
       viewingNumber: 96,
       dateViewed: new Date('01/24/2023'),
       picker: 'DianaD\'Orazio',
@@ -2204,15 +2204,15 @@ async function seed() {
     {
       movieTitle: 'Barb and Star Go To Vista Del Mar',
       movieReleaseYear: 2021,
-      genre: [ 'Comedy' ] ,
-      rating: '',
-      runtime: '',
-      director: [  ],
-      writer: [  ],
-      cast: [ ],
-      accolades: [  ], 
-      releaseDate: new Date(''), 
-      tags: [  ] ,
+      genre: [ 'Comedy' , 'Fantasy' ] ,
+      rating: 'PG-13',
+      runtime: '1hr 47m',
+      director: [ 'Josh Greenbaum' ],
+      writer: [ 'Kristen Wiig' , 'Annie Mumolo' ],
+      cast: [ 'Kristin Wiig' , 'Annie Mumolo' , 'Jamie Dornan' , 'Damon Wayans Jr.' ],
+      accolades: [ 'Critics Choice Awards Nominee' , 'MTV Movie + TV Awards Nominee' ], 
+      releaseDate: new Date('02/12/2021'), 
+      tags: [ 'funny' , 'fun' , 'laugh out loud' , 'silly' , 'buddy movie' , 'quirky' ] ,
       viewingNumber: 97,
       dateViewed: new Date('01/31/2023'),
       picker: 'AmyUnoShafer',
@@ -2232,7 +2232,7 @@ async function seed() {
       cast: [ 'Amandla Stenberg' , 'Maria Bakalova' , 'Myha\'la Herrold' , 'Chase Sui Wonders' , 'Rachel Sennott' , 'Lee Pace' , 'Pete Davidson' ],
       accolades: [  ], 
       releaseDate: new Date('08/05/2022'), 
-      tags: [ 'cool' , 'fun' , 'funny' , 'low-budget' , 'indie' ] ,
+      tags: [ 'cool' , 'fun' , 'funny' , 'low-budget' , 'indie' , 'dark' ] ,
       viewingNumber: 98,
       dateViewed: new Date('02/28/2023'),
       picker: 'ReynaHowkins',
@@ -2284,15 +2284,15 @@ async function seed() {
     {
       movieTitle: 'Bullet Train',
       movieReleaseYear: 2022,
-      genre: [ 'Action' , 'Comedy' ] ,
+      genre: [ 'Action' , 'Comedy' , 'Thriller' ] ,
       rating: 'R',
       runtime: '2hr 7m',
       director: [ 'David Leitch' ],
       writer: [ 'Zak Olkewicz' ],
       cast: [ 'Brad Pitt' , 'Joey King' , 'Aaron Taylor-Johnson' , 'Brian Tyree Henry' , 'Andrew Koji' , 'Hiroyuki Sanada' , 'Michael Shannon' , 'Benito A. Martinez Ocasio' , 'Sandra Bullock' ],
-      accolades: [  ], 
+      accolades: [ 'MTV Movie + TV Awards Nominee' , 'People\'s Choice Awards Nominee' , 'Jupiter Awards Winner' ], 
       releaseDate: new Date('08/05/2022'), 
-      tags: [ 'fun' , 'cool' ] ,
+      tags: [ 'fun' , 'cool' , 'one-person army' ] ,
       viewingNumber: 101,
       dateViewed: new Date('06/07/2023'),
       picker: 'Joanna',
@@ -2331,8 +2331,8 @@ async function seed() {
       writer: [ 'Laetitia Colombani' , 'Caroline Thivel' ],
       cast: [ 'Audrey Tautou' , 'Samuel Le Bihan' , 'Isabelle Carré' ],
       accolades: [  ], 
-      releaseDate: new Date(''), 
-      tags: [  ] ,
+      releaseDate: new Date('02/14/2003'), 
+      tags: [ 'nonlinear' , 'unreliable narrator' , 'dark' , 'twisty' , 'different' , 'french' , 'lady director' , 'low-budget'] ,
       viewingNumber: 103,
       dateViewed: new Date('08/30/2023'),
       picker: 'DianaD\'Orazio',
@@ -2344,15 +2344,15 @@ async function seed() {
     {
       movieTitle: 'The Lair of the White Worm',
       movieReleaseYear: 1988,
-      genre: [ 'Comedy' , 'Horror' , 'Dark Comedy'] ,
+      genre: [ 'Comedy' , 'Horror' , 'Dark Comedy' , 'Fantasy' ] ,
       rating: 'R',
       runtime: '1hr 33m',
       director: [ 'Ken Russell' ],
       writer: [ 'Ken Russell' , 'Bram Stroker' ],
       cast: [ 'Amanda Donohoe' , 'Hugh Grant' , 'Catherine Oxenberg' ],
-      accolades: [  ], 
-      releaseDate: new Date(''), 
-      tags: [  ] ,
+      accolades: [ 'Saturn Award Nominee' ], 
+      releaseDate: new Date('10/21/1988'), 
+      tags: [ 'cult classic' , 'low-budget' , 'indie' , 'cool' , 'punk' , 'fun' , 'dark' , 'different' ] ,
       viewingNumber: 104,
       dateViewed: new Date('11/01/2023'),
       picker: 'RuthSchanbacher',
@@ -2364,15 +2364,15 @@ async function seed() {
     {
       movieTitle: 'Bernie',
       movieReleaseYear: 2011,
-      genre: [ 'Comedy', 'Dark Comedy' , 'True Crime' , 'Crime' , 'Biography' , 'Mockumentary' , 'Drama' ] ,
+      genre: [ 'Comedy', 'Dark Comedy' , 'True Crime' , 'Crime' , 'Biography' , 'Drama' ] ,
       rating: 'PG-13',
       runtime: '1hr 44m',
       director: [ 'Rickard Linklater' ],
       writer: [ 'Skip Hollandsworth' , 'Richard Linklater' ],
       cast: [ 'Jack Black' , 'Shirley MacLaine' , 'Matthew McConaughey' ],
-      accolades: [  ], 
-      releaseDate: new Date(''), 
-      tags: [ 'funny' , 'different' , 'dark' , 'twisted' , 'based on a true story' ] ,
+      accolades: [ 'Gotham Award Nominee' , 'National Board of Review Top 10 Independent Films' , 'Golden Globe Nominee' ], 
+      releaseDate: new Date('06/16/2011'), 
+      tags: [ 'funny' , 'different' , 'dark' , 'twisted' , 'based on a true story' , 'small-town america' , 'indie' ] ,
       viewingNumber: 106,
       dateViewed: new Date('12/18/2023'),
       picker: 'AmyUnoShafer',
@@ -2385,15 +2385,15 @@ async function seed() {
     {
       movieTitle: 'Kiki\'s Delivery Service',
       movieReleaseYear: 1989,
-      genre: [ 'Animation' , 'Family' ] ,
+      genre: [ 'Animation' , 'Family' , 'Fantasy' ] ,
       rating: 'G',
-      runtime: '',
-      director: [  ],
-      writer: [  ],
-      cast: [ ],
-      accolades: [  ], 
-      releaseDate: new Date(''), 
-      tags: [  ] ,
+      runtime: '1hr 42m',
+      director: [ 'Hayao Miyazaki' ],
+      writer: [ 'Hayao Miyazaki' ],
+      cast: [ 'Minami Takayama' , 'Rei Sakuma' , 'Keiko Toda' , 'Kappei Yamaguchi' , 'Koichi Yamadera' , 'Mieko Nobusawa' , 'Koichi Miura' ],
+      accolades: [ 'Japan Academt Prize Winner' , 'Japan Cinema Association Award Winner' , 'Agency of Cultural Affairs Award Winner' ], 
+      releaseDate: new Date('07/29/1989'), 
+      tags: [ 'japanese' , 'cute' , 'gentle' , 'artsy' , 'cats' , 'witches' , 'based on a book' ] ,
       viewingNumber: 106,
       dateViewed: new Date('01/24/2024'),
       picker: 'LaurenEvans',
@@ -2406,14 +2406,14 @@ async function seed() {
       movieTitle: 'The Ice Storm',
       movieReleaseYear: 1997,
       genre: [ 'Drama' ] ,
-      rating: '',
-      runtime: '',
-      director: [  ],
-      writer: [  ],
-      cast: [ ],
-      accolades: [  ], 
-      releaseDate: new Date(''), 
-      tags: [  ] ,
+      rating: 'R',
+      runtime: '1hr 52m',
+      director: [ 'Ang Lee' ],
+      writer: [ 'James Schamus' ],
+      cast: ['Kevin Kline' , 'Joan Allen' , 'Sigourney Weaver', 'Henry Czerny' , 'Tobey Maguire' , 'Elijah Wood' , 'Christina Ricci' , 'Katie Holmes' ] ,
+      accolades: [ 'BAFTA Winner' , 'Palme d\'Or' , 'Golden Globe Nominee' ], 
+      releaseDate: new Date('09/27/1997'), 
+      tags: [ 'based on a book' , 'sad' , 'heavy' , 'interesting' , 'about family' , 'dyfunctional' , 'indie' , 'underrated' ] ,
       viewingNumber: 107,
       dateViewed: new Date('02/28/2024'),
       picker: 'ReynaHowkins',
@@ -2425,15 +2425,16 @@ async function seed() {
     {
       movieTitle: 'The Hunger',
       movieReleaseYear: 1983,
-      genre: [  ] ,
-      rating: '',
-      runtime: '',
-      director: [  ],
-      writer: [  ],
-      cast: [ ],
-      accolades: [  ], 
-      releaseDate: new Date(''), 
-      tags: [  ] ,
+      genre: [ 'Horror' , 'Erotic' , 'Fantasy' ] ,
+      rating: 'R',
+      runtime: '1hr 37m',
+      director: [ 'Tony Scott' ],
+      writer: [ 'Ivan Davis' , 'Michael Thomas' ],
+      cast: [ 'David Bowie' , 'Susan Sarandon' , 'Catherine Deneuve' , 'Cliff De Young' , 'Dan Hedaya' , 'Beth Ehlers' , 'Willam Dafoe' ],
+      accolades: [ 'Saturn Awards Nominee' ], 
+      releaseDate: new Date('04/29/1983'), 
+      tags: [ 'based on a book' , 'Cannes' , 'vampires' , 
+        'dark' , 'cult classic' , 'goth' , 'love triangle' , 'different' , 'sexy' , 'gay cinema' ] ,
       viewingNumber: 108,
       dateViewed: new Date('04/24/2024'),
       picker: 'AlisonDilfer',
@@ -2445,17 +2446,17 @@ async function seed() {
     {
       movieTitle: 'The Man Who Fell To Earth',
       movieReleaseYear: 1976,
-      genre: [  ] ,
-      rating: '',
-      runtime: '',
-      director: [  ],
-      writer: [  ],
-      cast: [ ],
-      accolades: [  ], 
-      releaseDate: new Date('05/29/2024'), 
-      tags: [  ] ,
+      genre: [ 'Drama' , 'Sci-Fi' ] ,
+      rating: 'R',
+      runtime: '2hr 19m',
+      director: [ 'Nicolas Roeg' ],
+      writer: [ 'Paul Mayersberg' , 'Walter Tevis' ],
+      cast: [ 'David Bowie' , 'Rip Torn' , 'Candy Clark' , 'Buck Henry' , 'Bernie Casey' ],
+      accolades: [ 'Golden Scroll Winner' , 'Berlin International Film Festival Nominee' , 'Hugo Awards Nominee' ], 
+      releaseDate: new Date('03/18/1976'), 
+      tags: [ 'based on a book' , 'surreal' , 'low-budget' , 'aliens' , 'visual effects' , 'different' , 'artsy' , 'indie' , 'british' ] ,
       viewingNumber: 109,
-      dateViewed: new Date(''),
+      dateViewed: new Date('05/29/2024'),
       picker: 'JoshBowie',
       attendees: [ 'JoshBowie' , 'AmyUnoShafer' ],
       memberRating: null,
@@ -2618,7 +2619,7 @@ async function seed() {
       viewingNumber: 117,
       dateViewed: new Date('05/19/2025'),
       picker: 'JoshBowie',
-      attendees: [ 'JoshBowie' , 'AmyUnoShafer' , 'Ruth' , 'Douglass' , 'JasonTaylor' , 'Reyna' ],
+      attendees: [ 'JoshBowie' , 'AmyUnoShafer' , 'RuthSchanbacher' , 'DouglasReinford' , 'JasonTaylor' , 'ReynaHowkins' ],
       memberRating: null,
       currentlyStreaming: null,
       season: 'Season 6'
@@ -2637,8 +2638,8 @@ async function seed() {
       tags: [  ] ,
       viewingNumber: 118,
       dateViewed: new Date('05/26/2025'),
-      picker: 'Ruth',
-      attendees: [ 'Ruth' , 'AmyUnoShafer' , 'ReynaHowkins' , 'Diana' , 'Jared' , 'Josh' ],
+      picker: 'RuthSchanbacher',
+      attendees: [ 'RuthSchanbacher' , 'AmyUnoShafer' , 'ReynaHowkins' , 'Diana' , 'Jared' , 'Josh' ],
       memberRating: null,
       currentlyStreaming: null,
       season: 'Season 6'
@@ -2665,9 +2666,9 @@ async function seed() {
     },
   ]);
 
-  const merch = await db.merch.insertMany([
+  // const merch = await Merch.insertMany([
     // add your merch data here
-  ]);
+  // ]);
 
   console.log('Hit Play!');
 }

@@ -30,7 +30,7 @@ function getSingleMovie(req, res) {
 
 // create a movie
 function createMovie(req, res) {
-    Movie.create(req, res)
+    Movie.create(req.body)
     .then((dbMovieData) => {
         return Member.findOneAndUpdate(
             { _id: req.body.memberId },
@@ -46,7 +46,7 @@ function createMovie(req, res) {
     })
     .catch((err) => {
         console.log(err);
-        res.status(500).json(err);
+        res.status(400).json(err);
     });
 }
 

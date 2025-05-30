@@ -6,10 +6,6 @@ const {
 
 // Schema to create movie model
 const movieSchema = new Schema({
-    movieId: {
-        type: Number,
-        default: () => Types.ObjectId()
-    },
     movieTitle: {
         type: String,
         required: true
