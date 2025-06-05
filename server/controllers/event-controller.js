@@ -18,7 +18,7 @@ function getSingleEvent(req, res) {
     Event.findOne({ _id: req.params.eventId })
     .then((dbEventData) => {
         if (!dbEventData) {
-            return res.status(404).json({ message: 'No event with this id!' });
+            return res.status(404).json({ message: 'Inconceivable! No event with this id!' });
         }
         res.json(dbEventData);
     })
@@ -40,9 +40,9 @@ function createEvent(req, res) {
     })
     .then((dbEventData) => {
         if (!dbEventData) {
-            return res.status(404).json({ message: 'Event created but no movie with this id!' });
+            return res.status(404).json({ message: 'Try more gum! (Event created but no movie with this id)' });
         }
-        res.json({ message: 'Event was successfully created!' });
+        res.json({ message: 'Groovy, Baby! The event was created!' });
     })
     .catch((err) => {
         console.log(err);
@@ -55,7 +55,7 @@ function updateEvent(req, res) {
     Event.findByIdAndUpdate({ _id: req.params.eventId }, {$set: req.body }, { runValidators: true, new: true })
     .then((dbEventData) => {
         if(!dbEventData) {
-            return res.status(404).json({ message: 'No event with this id!' });
+            return res.status(404).json({ message: 'Inconceivable! No event with this id!' });
         }
         res.json(dbEventData);
     })
@@ -70,9 +70,9 @@ function deleteEvent(req, res) {
     Event.findOneAndRemove({ _id: req.params.eventId })
     .then((dbEventData) => {
         if (!dbEventData) {
-            return res.status(404).json({ message: 'No event with this id!' });
+            return res.status(404).json({ message: 'Inconceivable! No event with this id!' });
         }
-        res.json({ message: 'Event was removed!' });
+        res.json({ message: 'We\'ll always have Paris.(Event was removed.)' });
     })
     .catch((err) => {
         console.log(err);
@@ -89,7 +89,7 @@ function updateRSVP(req, res) {
     )
     .then((dbEventData) => {
         if(!dbEventData) {
-            return res.status(404).json({ message: 'No event with this id!' });
+            return res.status(404).json({ message: 'Inconceivable! No event with this id!' });
         }
         res.json(dbEventData);
     })

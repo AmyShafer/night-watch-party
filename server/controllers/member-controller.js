@@ -18,7 +18,7 @@ function getSingleMember (req, res) {
     Member.findOne({ _id: req.params.memberId })
     .then((dbMemberData) => {
         if (!dbMemberData) {
-            return res.status(404).json({ message: 'No member with the id!' });
+            return res.status(404).json({ message: 'As if! No member with the id!' });
         }
         res.json(dbMemberData);
     })
@@ -40,9 +40,9 @@ function createMember (req, res) {
     })
     .then((dbMemberData) => {
         if (!dbMemberData) {
-            return res.status(404).json({ message: 'Member was created but no event with this id!' });
+            return res.status(404).json({ message: 'Try more gum! (Member was created but no event with this id.)' });
         }
-        res.json({ message: 'Member was successfully created!' });
+        res.json({ message: 'Yeah, Baby! Member was successfully created!' });
     })
     .catch((err) => {
         console.log(err);
@@ -59,7 +59,7 @@ function updateMember(req, res) {
     )
     .then((dbMemberData) => {
         if(!dbMemberData) {
-            return res.status(404).json({ message: 'No member with this id!' });
+            return res.status(404).json({ message: 'Nobody. No body, that\'s what we mean! (No member with this id.)' });
         }
         res.json(dbMemberData);
     })
@@ -74,9 +74,9 @@ function deleteMember(req, res) {
     Member.findOneAndRemove({ _id: req.params.memberId })
     .then((dbMemberData) => {
         if (!dbMemberData) {
-            return res.status(404).json({ message: 'No member with this id!' });
+            return res.status(404).json({ message: 'Nobody. No body, that\'s what we mean! (No member with this id.)' });
         }
-        res.json({ message: 'Member was removed!' });
+        res.json({ message: 'We\'ll always have Paris.(Member was removed.)' });
     })
     .catch((err) => {
         console.log(err);
@@ -93,7 +93,7 @@ function isMemberActive(req, res) {
     )
     .then((dbMemberData) => {
         if (!dbMemberData) {
-            return res.status(404).json({ message: 'No member with this id!' });
+            return res.status(404).json({ message: 'Nobody. No body, that\'s what we mean! (No member with this id.)' });
         }
         res.json(dbMemberData);
     })

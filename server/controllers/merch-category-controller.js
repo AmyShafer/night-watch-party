@@ -18,7 +18,7 @@ function getSingleMerchCategory(req, res) {
     MerchCategory.findOne({ _id: req.params.merchCategoryId })
     .then((dbMerchCategoryData) => {
         if (!dbMerchCategoryData) {
-          return res.status(404).json({ message: 'No merch category with this id!' });
+          return res.status(404).json({ message: 'As if! No merch category with this id!' });
         }
         res.jason(dbMerchCategoryData);
     })
@@ -40,9 +40,9 @@ function createMerchCategory(req,res) {
     })
     .then((dbMerchProductData) => {
         if (!dbMerchProductData) {
-            return res.status(404).json({ message: 'Category created but no product with this id!' });
+            return res.status(404).json({ message: 'Try more gum! (Category created but no product with this id.)' });
         }
-        res.json({ message: 'Merch Category successfully created!' });
+        res.json({ message: 'We invented post-its! And we also added this merch category for you.' });
     })
     .catch((err) => {
         console.log(err);
@@ -59,9 +59,9 @@ function updateMerchCategory(req, res) {
     )
     .then((dbMerchProductData) => {
         if (!dbMerchProductData) {
-          return res.status(404).json({ message: 'No merch category with this id!' });
+          return res.status(404).json({ message: 'I see dead people but I don\'t see a merch category with this id.' });
         }
-        res.json({ message: 'Merch category successfully deleted!' });
+        res.json({ message: 'This merch category has been sacked!' });
     })
     .catch((err) => {
         console.log(err);
@@ -74,9 +74,9 @@ function deleteMerchCategory(req, res) {
     MerchCategory.findOneAndRemove({ _id: req.params.merchCategoryId })
     .then((dbMerchCategoryData) => {
       if(!dbMerchCategoryData) {
-        return res.status(404).json({ message: 'No merch category with this id!' });
+        return res.status(404).json({ message: 'I see dead people but I don\'t see a merch category with this id.' });
       }
-      res.json({ message: 'Merch category was removed!' });
+      res.json({ message: 'Merch category has been sacked!' });
     })
     .catch((err) => {
         console.log(err);

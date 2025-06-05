@@ -18,7 +18,7 @@ function getSingleMovie(req, res) {
     Movie.findOne({ _id: req.params.movieId })
     .then((dbMovieData) => {
         if (!dbMovieData) {
-            return res.status(404).json({ message: 'No movie with this id!' });
+            return res.status(404).json({ message: 'Inconceivable! No movie with this id!' });
         } 
         res.json(dbMovieData);
     })
@@ -42,7 +42,7 @@ function createMovie(req, res) {
         if (!dbMovieData) {
             return res.status(404).json({ message: 'Movie created but no member with this id!' });
         }
-        res.json({ message: 'Movie was successfully created!' });
+        res.json({ message: 'Thank you, sir, may I have another! (Movie was successfully added!)' });
     })
     .catch((err) => {
         console.log(err);
@@ -59,7 +59,7 @@ function updateMovie(req, res) {
     )
     .then((dbMovieData) => {
         if(!dbMovieData) {
-            return res.status(404).json({ message: 'No movie with this id!' });
+            return res.status(404).json({ message: 'Inconceivable! No movie with this id!' });
         }
         res.json(dbMovieData);
     })
@@ -76,7 +76,7 @@ function  deleteMovie(req, res) {
         if (!dbMovieData) {
             return res.status(404).json({ message: 'No movie with this id!' });
         }
-        res.json({ message: 'Movie was removed!' });
+        res.json({ message: 'We\'ll always have Paris. (Movie was removed!)' });
     })
     .catch((err) => {
         console.log(err);
@@ -93,7 +93,7 @@ function addRating(req, res) {
     )
     .then((dbMovieData) => {
         if (!dbMovieData) {
-            return res.status(404).json({ message: 'No movie with this id!' });
+            return res.status(404).json({ message: 'Inconceivable! No movie with this id!' });
         }
         res.json(dbMovieData);
     })
@@ -112,7 +112,7 @@ function changeRating(req, res) {
     )
     .then((dbMovieData) => {
         if(!dbMovieData) {
-            return res.status(404).json({ message: 'No movie with this id!' });
+            return res.status(404).json({ message: 'Inconceivable! No movie with this id!' });
         }
         res.json(dbMovieData);
     })
@@ -131,7 +131,7 @@ function removeRating(req, res) {
     )
     .then((dbMovieData) => {
         if (!dbMovieData) {
-            return res.status(404).json({ message: 'No rating with this id!' });
+            return res.status(404).json({ message: 'Inconceivable! No rating with this id!' });
         }
         res.json(dbMovieData);
     })

@@ -18,7 +18,7 @@ function getSingleMerchProduct(req, res) {
     MerchProduct.findOne({ _id: req.params.merchProductId })
     .then((dbMerchProductData) => {
         if(!dbMerchProductData) {
-            return res.status(404).json({ message: 'No product with this id!' })
+            return res.status(404).json({ message: 'As if! No product with this id!' })
         }
         res.json(dbMerchProductData);
     })
@@ -40,9 +40,9 @@ function createMerchProduct(req, res) {
     })
     .then((dbMerchProductData) => {
         if (!dbMerchProductData) {
-            return res.status(404).json({ message: 'Product created but no catergory with this id!' });
+            return res.status(404).json({ message: 'Whatever! The product was created but there is no catergory with this id!' });
         }
-        res.json({ message: 'A product was successfully added!' })
+        res.json({ message: 'We invented post-its! And we also added this product for you.' })
     })
     .catch((err) => {
         console.log(err);
@@ -59,7 +59,7 @@ function updateMerchProduct(req, res) {
     )
     .then((dbMerchProductData) => {
         if(!dbMerchProductData) {
-            return res.status(404).json({ message: 'There is no product with this id!' });
+            return res.status(404).json({ message: 'As if! There is no product with this id!' });
         }
         res.json(dbMerchProductData);
     })
@@ -74,9 +74,9 @@ function deleteMerchProduct(req, res) {
     MerchProduct.findOneAndRemove({ _id: req.params.merchProductId })
     .then((dbMerchProductData) => {
         if(!dbMerchProductData) {
-            return res.status(404).json({ message: 'No product with this id!' })
+            return res.status(404).json({ message: 'As if! No product with this id!' })
         }
-        res.json({ message: 'Product was removed!' });
+        res.json({ message: 'This product has been sacked!' });
     })
     .catch((err) => {
         console.log(err);

@@ -18,7 +18,7 @@ function getSingleMerchOrder(req, res) {
     MerchOrder.findOne({ _id: req.params.merchOrderId })
     .then((dbMerchOrderData) => {
         if(!dbMerchOrderData) {
-            return res.status(404).json({ message: 'No order with this id!' })
+            return res.status(404).json({ message: 'Have you seen my stapler? Or, an order with this id? I haven\'t seen either...' })
         }
         res.json(dbMerchOrderData);
     })
@@ -40,9 +40,9 @@ function createMerchOrder(req, res) {
     })
     .then((dbMerchOrderData) => {
         if (!dbMerchOrderData) {
-            return res.status(404).json({ message: 'Order created but no member with this id!' });
+            return res.status(404).json({ message: 'Try more gum! Your order was created but there is no member with this id.' });
         }
-        res.json({ message: 'An order was successfully placed!' });
+        res.json({ message: 'You remind me of the babe! The babe with the order successfully placed!' });
     })
     .catch((err) => {
         console.log(err);
@@ -59,7 +59,7 @@ function updateMerchOrder(req, res) {
     )
     .then((dbMerchOrderData) => {
         if(!dbMerchOrderData) {
-            return res.status(404).json({ message: 'There is no order with this id!' })
+            return res.status(404).json({ message: 'Inconceivable! There is no order with this id!' })
         }
         res.json(dbMerchOrderData);
     })
@@ -74,9 +74,9 @@ function deleteMerchOrder(req, res) {
     MerchOrder.findOneAndRemove({ _id: req.params.merchOrderId })
     .then((dbMerchOrderData) => {
         if(!dbMerchOrderData) {
-            return res.status(404).json({ message: 'No order with this id!' });
+            return res.status(404).json({ message: 'Inconceivable! No order with this id!' });
         }
-        res.json({ message: 'Order was deleted' });
+        res.json({ message: 'This order has been sacked!' });
     })
     .catch((err) => {
         console.log(err);
