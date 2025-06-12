@@ -43,7 +43,7 @@ const memberSchema = new Schema({
         unique: false,
         required: true
     },
-     memberSince: {
+    memberSince: {
         type: String,
         unique: false,
         required: true
@@ -51,7 +51,7 @@ const memberSchema = new Schema({
     lastActive: {
         type: String,
         unique: false,
-        required: true
+        required: false
     },
     firstMoviePick: {
         type: String,

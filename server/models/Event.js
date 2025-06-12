@@ -27,7 +27,7 @@ const eventSchema = new Schema({
     },
     link: {
         type: String,
-        required: true
+        required: false
     },
     time: {
         type: String,

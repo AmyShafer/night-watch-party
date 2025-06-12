@@ -1,3 +1,4 @@
+const { default: concurrently } = require('concurrently');
 const {
     Schema, 
     model,
@@ -8,72 +9,75 @@ const {
 const movieSchema = new Schema({
     movieTitle: {
         type: String,
-        required: true
+        required: false
     },
     movieReleaseYear: {
         type: Number,
-        required: true
+        required: false
     },
     genre: {
         type: Array,
-        required: true
+        required: false
     },
     rating: {
         type: String,
-        required: true
+        required: false
     },
     runtime: {
         type: String,
-        required: true
+        required: false
     },
     director: {
         type: Array,
-        required: true
+        required: false
     },
     writer: {
         type: Array,
-        required: true
+        required: false
     },
     cast: {
         type: Array,
-        required: true
+        required: false
     },
     accolades: {
         type: Array,
-        required: true
+        required: false
     },
     releaseDate: {
         type: String,
-        required: true
+        required: false
     },
     tags: {
         type: Array,
-        required: true
+        required: false
     },
     viewingNumber: {
         type: Number,
-        required: true,
-        unique: true
+        required: false
     },
     dateViewed: {
         type: String,
-        required: true
+        required: false
     },
     picker: {
         type: String,
-        required: true
+        required: false
     },
     attendees: {
         type: Array,
-        required: true
+        required: false
     },
     memberRating: {
         type: Number,
         required: false
     },
+    currentlyStreaming: {
+        type: Array,
+        required: false
+    },
     season: {
         type: String,
-        required: true
+        required: false
     },
     createdAt: {
         type: Date,
