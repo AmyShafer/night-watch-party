@@ -3,10 +3,13 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const MerchCategorySchema = new Schema({
-    name: {
+    category: {
       type: String,
       required: true,
       trim: true
+    },
+    products: {
+      type: Array
     }
 });
 

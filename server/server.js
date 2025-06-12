@@ -24,7 +24,7 @@ app.get('*', (req, res) => {
 // Start
 db.once('open', () => {
     app.listen(PORT, () => {
-        console.log(`What... is the air-speed velocity of an unladen swallow?`);
+        console.log(`What...is the air-speed velocity of an unladen swallow?`);
     });
 });
 

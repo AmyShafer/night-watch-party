@@ -1,6 +1,7 @@
 const { 
     Schema,
-    model
+    model,
+    trusted
  } = require('mongoose');
 
  // Schema to create MerchOrder model
@@ -9,12 +10,24 @@ const MerchOrderSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    products: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Product'
-        }
-    ]
+    customer: {
+        type: Map,
+        of: String
+    },
+    orderNumber: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    itemsOrdered: {
+        type: Schema.Types.ObjectId,
+        ref: 'Product',
+        items: []
+    },
+    orderStatus: {
+        type: String,
+        required: true
+    } 
 });
 
 // Initialize to MerchOrder model

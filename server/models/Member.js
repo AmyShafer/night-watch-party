@@ -5,7 +5,7 @@ const {
 
 // Schema to create Member model
 const memberSchema = new Schema({
-    memberName: {
+    username: {
         type: String,
         unique: true, 
         required: true,
@@ -13,18 +13,76 @@ const memberSchema = new Schema({
     },
     email: {
         type: String,
-        required: true,
+        required: false,
         unique: true,
+        sparse: true,
         validate: {
           validator: function (v) {
             return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
           }
         },
     },
-    memberPicks: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Pick',
-    }, ],
+    birthday: {
+        type: String,
+        unique: false, 
+        required: false,
+        trimmed: true
+    },
+    isActive: {
+        type: Boolean,
+        unique: false,
+        required: true
+    },
+    roles: {
+        type: Array,
+        unique: false,
+        required: true 
+    },
+    memberSince: {
+        type: String,
+        unique: false,
+        required: true
+    },
+     memberSince: {
+        type: String,
+        unique: false,
+        required: true
+    },
+    lastActive: {
+        type: String,
+        unique: false,
+        required: true
+    },
+    firstMoviePick: {
+        type: String,
+        unique: false,
+        required: false
+    },
+    mostRecentMoviePick: {
+        type: String,
+        unique: false,
+        required: false
+    },
+    favoriteMovies: {
+        type: Array,
+        unique: false,
+        required: false
+    },
+    memberStats: {
+        type: Array,
+        unique: false,
+        required: false
+    },
+    currentRSVP: {
+        type: String,
+        unique: false,
+        required: false
+    },
+    socials: {
+        type: Array,
+        unique: false,
+        required: false
+    },
     memberEvents: [{
         type: Schema.Types.ObjectId,
         ref: 'Event',

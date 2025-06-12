@@ -1,19 +1,1122 @@
 const db = require('./connection');
-const { Member, Movie, Merch } = require('../models');
+const { Event, Member, Movie, MerchCategory, MerchProduct, MerchOrder } = require('../models');
 
 db.once('open', async () => {
   await seed();
+  process.exit();
 });
 
 async function seed() {
+  await Event.deleteMany();
+  const events = await Event.insertMany([
+    // Season 1
+    {
+      date: new Date('10/01/2020'),
+      movieTitle: 'The Swimmer',
+      picker: 'JohnCecilPrice',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('10/01/2020')
+    },
+    {
+      date: new Date('10/08/2020'),
+      movieTitle: 'World\'s Greatest Dad',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('10/08/2020')
+    },
+    {
+      date: new Date('10/15/2020'),
+      movieTitle: 'What Ever Happened to Baby Jane?',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('10/15/2020')
+    },
+    {
+      date: new Date('10/29/2020'),
+      movieTitle: 'American Werewolf in London',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('10/29/2020')
+    },
+   {
+      date: new Date('11/05/2020'),
+      movieTitle: 'Housebound',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('11/05/2020')
+    },
+    {
+      date: new Date('11/12/2020'),
+      movieTitle: 'Drugstore Cowboy',
+      picker: 'ReynaHowkins',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('11/12/2020')
+    },
+    {
+      date: new Date('11/19/2020'),
+      movieTitle: 'Animal House',
+      picker: 'JohnCecilPrice',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('11/19/2020')
+    },
+    {
+      date: new Date('11/25/2020'),
+      movieTitle: 'Endless Love',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('11/25/2020')
+    },
+    {
+      date: new Date('12/01/2020'),
+      movieTitle: 'The Great Dictator',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('12/01/2020')
+    },    
+    {
+      date: new Date('12/10/2020'),
+      movieTitle: 'Moonstruck',
+      picker: 'ReynaHowkins',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('12/10/2020')
+    },
+   {
+      date: new Date('12/17/2020'),
+      movieTitle: 'The Shop Around the Corner',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('12/17/2020')
+    },
+        {
+      date: new Date('12/23/2020'),
+      movieTitle: 'Trading Places',
+      picker: 'JohnCecilPrice',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('12/23/2020')
+    },
+        {
+      date: new Date('12/30/2020'),
+      movieTitle: 'Grey Gardens',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('12/30/2020')
+    },
+    // Season 2
+   {
+      date: new Date('01/07/2021'),
+      movieTitle: 'Mad Max: Fury Road',
+      picker: 'ReynaHowkins',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/07/2020')
+    },
+    {
+      date: new Date('01/15/2021'),
+      movieTitle: 'Best in Show',
+      picker: 'ReynaHowkins',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/15/2021')
+    },
+    {
+      date: new Date('01/21/2021'),
+      movieTitle: 'Me Without You',
+      picker: 'ReynaHowkins',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/21/2021')
+    },
+    {
+      date: new Date('01/28/2021'),
+      movieTitle: 'After Hours',
+      picker: 'ReynaHowkins',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/28/2021')
+    },
+    {
+      date: new Date('02/05/2021'),
+      movieTitle: 'The History of Future Folk',
+      picker: 'ReynaHowkins',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('02/05/2021')
+    },
+    {
+      date: new Date('02/12/2021'),
+      movieTitle: 'Great Expectations',
+      picker: 'ReynaHowkins',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('02/12/2021')
+    },
+    {
+      date: new Date('02/25/2021'),
+      movieTitle: 'Casablanca',
+      picker: 'ReynaHowkins',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('02/25/2021')
+    },
+    {
+      date: new Date('03/04/2021'),
+      movieTitle: 'Roman Holiday',
+      picker: 'ReynaHowkins',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('03/04/2021')
+    },
+    {
+      date: new Date('03/18/2021'),
+      movieTitle: 'The Brother from Another Planet',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('03/18/2021')
+    },
+    {
+      date: new Date('03/20/2021'),
+      movieTitle: 'Woman in Gold',
+      picker: 'ReynaHowkins',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('03/20/2021')
+    },
+    {
+      date: new Date('03/25/2021'),
+      movieTitle: 'No Way to Treat a Lady',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('03/25/2021')
+    },
+    {
+      date: new Date('04/01/2021'),
+      movieTitle: 'Raising Arizona',
+      picker: 'ReynaHowkins',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('04/01/2021')
+    },
+    {
+      date: new Date('04/16/2021'),
+      movieTitle: 'Enchanted April',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('04/16/2021')
+    },
+    {
+      date: new Date('04/22/2021'),
+      movieTitle: 'Romy and Michele\'s High School Union',
+      picker: 'JuliaFleck',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('04/22/2021')
+    },
+    {
+      date: new Date('04/29/2021'),
+      movieTitle: 'Trixie Mattel: Moving Parts',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('04/29/2021')
+    },
+    {
+      date: new Date('05/06/2021'),
+      movieTitle: 'Strictly Ballroom',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('05/06/2021')
+    },
+    {
+      date: new Date('05/20/2021'),
+      movieTitle: 'Promising Young Woman',
+      picker: 'ReynaHowkins',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('05/20/2021')
+    },
+    {
+      date: new Date('06/10/2021'),
+      movieTitle: 'Charade',
+      picker: 'LaurenEvans',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' , 'LaurenEvans' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('06/10/2021')
+    },
+    {
+      date: new Date('06/24/2021'),
+      movieTitle: 'City Slickers',
+      picker: 'ErikKirby',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' , 'ErikKirby' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('06/24/2021')
+    },
+    {
+      date: new Date('07/01/2021'),
+      movieTitle: 'Desperately Seeking Susan',
+      picker: 'JohnCecilPrice',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('07/01/2021')
+    },
+    {
+      date: new Date('07/08/2021'),
+      movieTitle: 'The House Bunny',
+      picker: 'DawnFallik',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DawnFallik' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('07/08/2021')
+    },
+    {
+      date: new Date('07/09/2021'),
+      movieTitle: 'Private Benjamin',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('07/09/2021')
+    },
+    {
+      date: new Date('07/22/2021'),
+      movieTitle: 'The Princess Bride',
+      picker: 'LaurenGervasio',
+      attendees: [ 'LaurenGervasio', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('07/22/2021')
+    },
+    {
+      date: new Date('08/12/2021'),
+      movieTitle: 'Muriel\'s Wedding',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('08/12/2021')
+    },
+    {
+      date: new Date('08/19/2021'),
+      movieTitle: 'Only Lovers Left Alive',
+      picker: 'Becky',
+      attendees: [ 'Becky', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('08/19/2021')
+    },
+    {
+      date: new Date('08/26/2021'),
+      movieTitle: 'Clue',
+      picker: 'ReynaHowkins',
+      attendees: [ 'ReynaHowkins', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('08/26/2021')
+    },
+    {
+      date: new Date('09/02/2021'),
+      movieTitle: 'The Shining',
+      picker: 'LaurenEvans',
+      attendees: [ 'LaurenEvans', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('09/02/2021')
+    },
+    {
+      date: new Date('09/10/2021'),
+      movieTitle: 'Hair Love',
+      picker: 'DawnFallik',
+      attendees: [ 'DawnFallik', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('09/10/2021')
+    },
+    {
+      date: new Date('09/10/2021'),
+      movieTitle: 'Two Distant Strangers',
+      picker: 'DawnFallik',
+      attendees: [ 'DawnFallik', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('09/10/2021')
+    },
+    {
+      date: new Date('09/16/2021'),
+      movieTitle: 'Office Space',
+      picker: 'ErikKirby',
+      attendees: [ 'ErikKirby', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('09/16/2021')
+    },
+    {
+      date: new Date('03/22/2021'),
+      movieTitle: 'Screwed',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('03/22/2021')
+    },
+    {
+      date: new Date('09/29/2021'),
+      movieTitle: 'Baby Mama',
+      picker: 'LaurenGervasio',
+      attendees: [ 'LaurenGervasio', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('09/29/2021')
+    },
+    {
+      date: new Date('10/06/2021'),
+      movieTitle: 'Arsenic and Old Lace',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('10/06/2021')
+    },
+    {
+      date: new Date('10/13/2021'),
+      movieTitle: 'Edward Scissorhands',
+      picker: 'ReynaHowkins',
+      attendees: [ 'ReynaHowkins', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('010/13/2021')
+    },
+    {
+      date: new Date('10/20/2021'),
+      movieTitle: 'What We Do in Shadows',
+      picker: 'LaurenEvans',
+      attendees: [ 'LaurenEvans', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('10/20/2021')
+    },
+    {
+      date: new Date('10/27/2021'),
+      movieTitle: 'Young Frankenstein',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('10/27/2021')
+    },
+    {
+      date: new Date('11/03/2021'),
+      movieTitle: 'Labyrinth',
+      picker: 'DawnFallik',
+      attendees: [ 'DawnFallik', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('11/03/2021')
+    },
+    {
+      date: new Date('11/09/2021'),
+      movieTitle: 'American Graffiti',
+      picker: 'ErikKirby',
+      attendees: [ 'AmyUnoShafer', 'ErikKirby' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('11/09/2021')
+    },
+    {
+      date: new Date('11/17/2021'),
+      movieTitle: 'The Greatest Showman',
+      picker: 'LaurenGervasio',
+      attendees: [ 'AmyUnoShafer', 'LaurenGervasio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('11/17/2021')
+    },
+    {
+      date: new Date('11/24/2021'),
+      movieTitle: 'The Adventures of Baron Munchausen',
+      picker: 'RuthSchanbacher',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('11/24/2021')
+    },
+    {
+      date: new Date('12/01/2021'),
+      movieTitle: 'Die Hard',
+      picker: 'LaurenEvans',
+      attendees: [ 'AmyUnoShafer', 'LaurenEvans' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('12/01/2021')
+    },
+    {
+      date: new Date('12/15/2021'),
+      movieTitle: 'The Accidental Tourist',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('12/15/2021')
+    },
+    {
+      date: new Date('12/22/2021'),
+      movieTitle: 'Clueless',
+      picker: 'ReynaHowkins',
+      attendees: [ 'ReynaHowkins', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('12/22/2021')
+    },
+    {
+      date: new Date('12/29/2021'),
+      movieTitle: 'Silver Streak',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('12/29/2021')
+    },
+    // Season 4
+    {
+      date: new Date('03/25/2021'),
+      movieTitle: 'Promising Young Woman',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('03/25/2021')
+    },
+    {
+      date: new Date('03/25/2021'),
+      movieTitle: 'Promising Young Woman',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('03/25/2021')
+    },
+    {
+      date: new Date('03/25/2021'),
+      movieTitle: 'Promising Young Woman',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('03/25/2021')
+    },
+    {
+      date: new Date('03/25/2021'),
+      movieTitle: 'Promising Young Woman',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('03/25/2021')
+    },
+    // Season 3
+    {
+      date: new Date('01/05/2022'),
+      movieTitle: 'Tootsie',
+      picker: 'DawnFallik',
+      attendees: [ 'DawnFallik', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/05/2022')
+    },
+    {
+      date: new Date('01/12/2022'),
+      movieTitle: 'Scott Pilgrim vs the World',
+      picker: 'RuthSchanbacher',
+      attendees: [ 'RuthSchanbacher', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/12/2022')
+    },
+    {
+      date: new Date('01/19/2022'),
+      movieTitle: 'Waking Ned Devine',
+      picker: 'JenniferO\'Shea',
+      attendees: [ 'JenniferO\'Shea', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/19/2022')
+    },
+    {
+      date: new Date('01/26/2022'),
+      movieTitle: 'The Birdcage',
+      picker: 'LaurenEvans',
+      attendees: [ 'LaurenEvans', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/26/2022')
+    },
+    {
+      date: new Date('02/02/2022'),
+      movieTitle: 'The Adventures of Priscilla, Queen of the Desert',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'DianaD\'Orazio', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('02/02/2022')
+    },
+    {
+      date: new Date('02/09/2022'),
+      movieTitle: 'To Wong Foo, Thanks for Everything! Julie Newman',
+      picker: 'KellyKinzey',
+      attendees: [ 'KellyKinzey', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('02/09/2022')
+    },
+    {
+      date: new Date('02/16/2022'),
+      movieTitle: 'Big Night',
+      picker: 'ReynaHowkins',
+      attendees: [ 'ReynaHowkins', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('02/16/2022')
+    },
+    {
+      date: new Date('02/23/2022'),
+      movieTitle: 'Born Yesterday',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('02/23/2022')
+    },
+    {
+      date: new Date('03/09/2022'),
+      movieTitle: 'Downtown 81',
+      picker: 'RuthSchanbacher',
+      attendees: [ 'RuthSchanbacher', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('03/09/2022')
+    },
+    {
+      date: new Date('05/11/2022'),
+      movieTitle: 'House of Gucci',
+      picker: 'AlisonDilfer',
+      attendees: [ 'AlisonDilfer', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('05/11/2022')
+    },
+    {
+      date: new Date('03/30/2022'),
+      movieTitle: 'Isle of Dogs',
+      picker: 'LaurenEvans',
+      attendees: [ 'LaurenEvans', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('03/30/2022')
+    },
+    {
+      date: new Date('04/06/2022'),
+      movieTitle: 'Atonement',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'DianaD\'Orazio', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('04/06/2022')
+    },
+    {
+      date: new Date('04/20/2022'),
+      movieTitle: 'Hustlers',
+      picker: 'ReynaHowkins',
+      attendees: [ 'ReynaHowkins', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('04/20/2022')
+    },
+    {
+      date: new Date('04/28/2022'),
+      movieTitle: 'Fantastic Mr. Fox',
+      picker: 'JeromePenn',
+      attendees: [ 'JeromePenn', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('04/28/2022')
+    },
+    {
+      date: new Date('05/04/2022'),
+      movieTitle: 'The Freshman',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('05/04/2022')
+    },
+    {
+      date: new Date('05/11/2022'),
+      movieTitle: 'FYRE: The Greatest Party That Never Happened',
+      picker: 'DawnFallik',
+      attendees: [ 'DawnFallik', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('05/11/2022')
+    },
+    {
+      date: new Date('05/18/2022'),
+      movieTitle: 'A Girl Walks Home Alone at Night',
+      picker: 'RuthSchanbacher',
+      attendees: [ 'RuthSchanbacher', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('05/18/2022')
+    },
+    {
+      date: new Date('05/24/2022'),
+      movieTitle: 'Hedwig and the Angry Inch',
+      picker: 'ReynaHowkins',
+      attendees: [ 'ReynaHowkins', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('05/24/2022')
+    },
+    {
+      date: new Date('06/01/2022'),
+      movieTitle: 'But I\'m a Cheerleader',
+      picker: 'AlisonDilfer',
+      attendees: [ 'AlisonDilfer', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('06/01/2022')
+    },
+    {
+      date: new Date('06/15/2022'),
+      movieTitle: 'The Adventures of Walter Mitty',
+      picker: 'LaurenGervasio',
+      attendees: [ 'LaurenGervasio', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('06/15/2022')
+    },
+    {
+      date: new Date('06/15/2022'),
+      movieTitle: 'When Harry Met Sally',
+      picker: 'LaurenEvans',
+      attendees: [ 'LaurenEvans', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('06/15/2022')
+    },
+    {
+      date: new Date('06/28/2022'),
+      movieTitle: 'Psycho Beach Party',
+      picker: 'KellyKinzey',
+      attendees: [ 'KellyKinzey', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('06/28/2022')
+    },
+    {
+      date: new Date('07/05/2022'),
+      movieTitle: 'A Room With a View',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('07/05/2022')
+    },
+    {
+      date: new Date('08/17/2022'),
+      movieTitle: 'Monty Python and the Holy Grail',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('08/17/2022')
+    },
+    {
+      date: new Date('08/24/2022'),
+      movieTitle: 'Hello, My Name is Doris',
+      picker: 'ReynaHowkins',
+      attendees: [ 'ReynaHowkins', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('08/24/2022')
+    },
+    {
+      date: new Date('10/05/2022'),
+      movieTitle: 'The Sixth Sense',
+      picker: 'LaurenEvans',
+      attendees: [ 'LaurenEvans', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('10/05/2022')
+    },
+    {
+      date: new Date('10/26/2022'),
+      movieTitle: 'The Love Witch',
+      picker: 'AlisonDilfer',
+      attendees: [ 'AlisonDilfer', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('10/26/2022')
+    },
+    {
+      date: new Date('11/02/2022'),
+      movieTitle: 'She\'s Gotta Have It',
+      picker: 'RuthSchanbacher',
+      attendees: [ 'RuthSchanbacher', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('11/02/2022')
+    },
+    {
+      date: new Date('11/15/2022'),
+      movieTitle: 'My Policeman',
+      picker: 'AlisonDilfer',
+      attendees: [ 'AmyUnoShafer', 'AlisonDilfer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('11/15/2022')
+    },
+    {
+      date: new Date('11/22/2022'),
+      movieTitle: 'Better Off Dead',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('11/22/2022')
+    },
+    {
+      date: new Date('11/29/2022'),
+      movieTitle: '!Three Amigos!',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('11/29/2022')
+    },
+    {
+      date: new Date('12/06/2022'),
+      movieTitle: 'A Christmas Story 2',
+      picker: 'ReynaHowkins',
+      attendees: [ 'ReynaHowkins', 'AmyUnoShafer', 'DianaD\'Orazio' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('12/06/2022')
+    },
+    // Season 4
+   {
+      date: new Date('01/03/2023'),
+      movieTitle: 'Don\'t Worry Darling',
+      picker: 'AlisonDilfer',
+      attendees: [ 'AlisonDilfer', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/03/2023')
+    },
+    {
+      date: new Date('01/11/2023'),
+      movieTitle: 'Meet Me in St. Louis',
+      picker: 'LaurenEvans',
+      attendees: [ 'LaurenEvans', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/11/2023')
+    },
+    {
+      date: new Date('01/18/2023'),
+      movieTitle: 'Spirited Away',
+      picker: 'RuthSchanbacher',
+      attendees: [ 'RuthSchanbacher', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/18/2023')
+    },
+    {
+      date: new Date('01/24/2023'),
+      movieTitle: 'Being Julia',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'DianaD\'Orazio' , 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/24/2023')
+    },
+    {
+      date: new Date('01/31/2023'),
+      movieTitle: 'Barb and Star Go To Vista Del Mar',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/31/2023')
+    },
+    {
+      date: new Date('02/28/2023'),
+      movieTitle: 'Bodies Bodies Bodies',
+      picker: 'ReynaHowkins',
+      attendees: [ 'ReynaHowkins' , 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('02/28/2023')
+    },
+    {
+      date: new Date('04/05/2023'),
+      movieTitle: 'Dazed and Confused',
+      picker: 'LaurenEvans',
+      attendees: [ 'LaurenEvans' , 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('04/05/2023')
+    },
+    {
+      date: new Date('05/10/2023'),
+      movieTitle: 'Party Girl',
+      picker: 'ReynaHowkins',
+      attendees: [ 'ReynaHowkins' , 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('05/10/2023')
+    },
+    {
+      date: new Date('06/07/2023'),
+      movieTitle: 'Bullet Train',
+      picker: 'Joanna',
+      attendees: [ 'Joanna', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('06/07/2023')
+    },
+    {
+      date: new Date('07/12/2023'),
+      movieTitle: 'Cabaret',
+      picker: 'AlisonDilfer',
+      attendees: [ 'AlisonDilfer', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('07/12/2023')
+    },
+    {
+      date: new Date('08/30/2023'),
+      movieTitle: 'He Loves Me, He Loves Me Not',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'AlisonDilfer', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('08/30/2023')
+    },
+    {
+      date: new Date('11/01/2023'),
+      movieTitle: 'The Lair of the White Worm',
+      picker: 'RuthSchanbacher',
+      attendees: [ 'RuthSchanbacher', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('11/01/2023')
+    },
+    {
+      date: new Date('12/18/2023'),
+      movieTitle: 'Bernie',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('12/18/2023')
+    },
+    // Season 5
+    {
+      date: new Date('01/24/2024'),
+      movieTitle: 'Kiki\'s Delivery Service',
+      picker: 'LaurenEvans',
+      attendees: [ 'LaurenEvans', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('01/24/2024')
+    },
+    {
+      date: new Date('02/28/2024'),
+      movieTitle: 'The Ice Storm',
+      picker: 'ReynaHowkins',
+      attendees: [ 'ReynaHowkins', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('02/28/2024')
+    },
+    {
+      date: new Date('04/24/2024'),
+      movieTitle: 'The Hunger',
+      picker: 'AlisonDilfer',
+      attendees: [ 'AlisonDilfer', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('04/24/2024')
+    },
+    {
+      date: new Date('05/29/2024'),
+      movieTitle: 'The Man Who Fell To Earth',
+      picker: 'JoshBowie',
+      attendees: [ 'JoshBowie', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('05/29/2024')
+    },
+    {
+      date: new Date('07/03/2024'),
+      movieTitle: 'Watcher',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'DianaD\'Orazio', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('07/03/2024')
+    },
+    // Season 6
+    {
+      date: new Date('07/03/2025'),
+      movieTitle: 'Repo Man',
+      picker: 'RuthSchanbacher',
+      attendees: [ 'RuthSchanbacher', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('07/03/2025')
+    },
+    {
+      date: new Date('04/15/2025'),
+      movieTitle: 'Jawbreaker',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'DianaD\'Orazio', 'AmyUnoShafer' , 'DouglasReinford' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('04/15/2025')
+    },
+    {
+      date: new Date('04/22/2025'),
+      movieTitle: 'Tsotsi',
+      picker: 'DouglasReinford',
+      attendees: [ 'DianaD\'Orazio', 'AmyUnoShafer' , 'DouglasReinford' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('04/22/2025')
+    },
+    {
+      date: new Date('04/29/2025'),
+      movieTitle: 'The Pianist',
+      picker: 'DianaD\'Orazio',
+      attendees: [ 'DianaD\'Orazio', 'AmyUnoShafer' , 'DouglasReinford' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('04/29/2025')
+    },
+    {
+      date: new Date('05/05/2025'),
+      movieTitle: 'Take Me Home Tonight',
+      picker: 'JaredLenin',
+      attendees: [ 'JaredLenin', 'AmyUnoShafer' , 'ReynaHowkins' , 'DianaD\'Orazio' , 'DouglasReinford' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('05/05/2025')
+    },
+    {
+      date: new Date('05/11/2025'),
+      movieTitle: 'Spider Baby',
+      picker: 'ReynaHowkins',
+      attendees: [ 'ReynaHowkins', 'AmyUnoShafer' , 'JasonTaylor'],
+      isCurrent: false,
+      link: '',
+      time: new Date('05/11/2025')
+    },
+       {
+      date: new Date('05/19/2025'),
+      movieTitle: 'Austin Powers in Goldmember',
+      picker: 'JoshBowie',
+      attendees: [ 'JoshBowie', 'AmyUnoShafer' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('05/19/2025')
+    },
+    {
+      date: new Date('05/26/2025'),
+      movieTitle: 'Wings of Desire',
+      picker: 'RuthSchanbacher',
+      attendees: [ 'RuthSchanbacher', 'AmyUnoShafer' , 'ReynaHowkins' , 'JaredLenin' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('05/26/20255')
+    },
+    {
+      date: new Date('06/02/2025'),
+      movieTitle: 'Sharp Corner',
+      picker: 'AmyUnoShafer',
+      attendees: [ 'DianaD\'Orazio', 'AmyUnoShafer' , 'DouglasReinford' , 'RuthSchanbacher' , 'JoshBowie' , 'JaredLenin' , 'DovAlpert' ],
+      isCurrent: false,
+      link: '',
+      time: new Date('06/02/2025')
+    },
+    {
+      date: new Date('06/13/2025'),
+      movieTitle: 'Junebug',
+      picker: 'DouglasReinford',
+      attendees: [ 'DouglasReinford', 'AmyUnoShafer' ],
+      isCurrent: true,
+      link: '',
+      time: new Date('06/13/2025')
+    },
+  ]);
+
+  await Member.deleteMany();
   const members = await Member.insertMany([
     {
       username: 'AlisonDilfer',
+      email: 'alisondilfer@gmail.com',
       birthday: null,
       isActive: true,
       roles: [ 'member' ],
       memberSince: new Date('03/02/2021'),
-      leftIn: null,
+      lastActive: null,
       firstMoviePicked: 'House of Gucci',
       mostRecentMoviePicked: 'The Hunger',
       favoriteMovies: [ ],
@@ -27,7 +1130,7 @@ async function seed() {
       isActive: false,
       roles: [ 'admin', 'member' ],
       memberSince: new Date('10/01/2020'),
-      leftIn: null,
+      lastActive: null,
       firstMoviePicked: 'World\'s Greatest Dad',
       mostRecentMoviePicked: 'Jawbreaker',
       favoriteMovies: [ 'Ed Wood', 'The Birdcage', 'The Producers(1967)', 'Eighth Grade', "Wayne's World", 'The Rocky Horror Picture Show', 'American Movie' ],
@@ -35,13 +1138,13 @@ async function seed() {
       currentRSVP: 'Coming!',
       socials: [ 'BlueSky', 'Facebook', 'Instagram', 'LetterBoxd', 'TikTok' ]
     },
-        {
+    {
       username: 'BeckySwinton',
       birthday: null,
       isActive: false,
       roles: [ 'member' ],
       memberSince: new Date('10/01/2020'),
-      leftIn: null,
+      lastActive: null,
       firstMoviePicked: 'Only Lovers Left Alive',
       mostRecentMoviePicked: 'Jawbreaker',
       favoriteMovies: [ 'Ed Wood', 'The Birdcage', 'The Producers(1967)', 'Eighth Grade', "Wayne's World", 'The Rocky Horror Picture Show', 'American Movie' ],
@@ -55,7 +1158,7 @@ async function seed() {
       isActive: false,
       roles: [ 'member' ],
       memberSince: new Date('08/17/2022'),
-      leftIn: null,
+      lastActive: null,
       firstMoviePicked: null,
       mostRecentMoviePicked: null,
       favoriteMovies: [ ],
@@ -69,7 +1172,7 @@ async function seed() {
       isActive: false,
       roles: ['member'],
       memberSince: new Date('06/10/2021'),
-      leftIn: new Date('07/01/2022'),
+      lastActive: new Date('07/01/2022'),
       firstMoviePicked: 'The House Bunny',
       mostRecentMoviePicked: 'FYRE: The Greatest Party That Never Happened',
       favoriteMovies: [ ],
@@ -83,7 +1186,7 @@ async function seed() {
       isActive: true,
       roles: [ 'member' ],
       memberSince: new Date('10/01/2020'),
-      leftIn: null,
+      lastActive: null,
       firstMoviePicked: 'What Ever Happened to Baby Jane?',
       mostRecentMoviePicked: 'The Pianist',
       favoriteMovies: [ ],
@@ -97,7 +1200,7 @@ async function seed() {
       isActive: true,
       roles: [ 'member' ],
       memberSince: new Date('04/07/2025'),
-      leftIn: null,
+      lastActive: null,
       firstMoviePicked: 'Tsotsi',
       mostRecentMoviePicked: null,
       favoriteMovies: [ ],
@@ -111,7 +1214,7 @@ async function seed() {
       isActive: true,
       roles: [ 'member' ],
       memberSince: new Date('06/02/2025'),
-      leftIn: null,
+      lastActive: null,
       firstMoviePicked: null,
       mostRecentMoviePicked: null,
       favoriteMovies: [ ],
@@ -125,7 +1228,7 @@ async function seed() {
       isActive: false,
       roles: [ 'member' ],
       memberSince: new Date('05/06/2021'),
-      leftIn: null,
+      lastActive: null,
       firstMoviePicked: 'City Slickers',
       mostRecentMoviePicked: 'American Graffiti',
       favoriteMovies: [ ],
@@ -139,7 +1242,7 @@ async function seed() {
       isActive: true,
       roles: [ 'member' ],
       memberSince: new Date('05/11/2025'),
-      leftIn: null,
+      lastActive: null,
       firstMoviePicked: '',
       mostRecentMoviePicked: '',
       favoriteMovies: [],
@@ -153,7 +1256,7 @@ async function seed() {
       isActive: false,
       roles: [ 'member' ],
       memberSince: new Date('04/22/2025'),
-      leftIn: null,
+      lastActive: null,
       firstMoviePicked: 'Take Me Home Tonight',
       mostRecentMoviePicked: 'Take Me Home Tonight',
       favoriteMovies: [],
@@ -167,7 +1270,7 @@ async function seed() {
       isActive: false,
       roles: [ 'member' ],
       memberSince: new Date('01/05/2022'),
-      leftIn: new Date('01/26/2022'),
+      lastActive: new Date('01/26/2022'),
       firstMoviePicked: 'Waking Ned Devine',
       mostRecentMoviePicked: 'Waking Ned Devine',
       favoriteMovies: [ ],
@@ -181,7 +1284,7 @@ async function seed() {
       isActive: false,
       roles: [ 'member' ],
       memberSince: new Date('06/10/2021'),
-      leftIn: new Date('07/01/2022'),
+      lastActive: new Date('07/01/2022'),
       firstMoviePicked: 'The Adventures of Walter Mitty',
       mostRecentMoviePicked: 'The Adventures of Walter Mitty',
       favoriteMovies: [ ],
@@ -195,7 +1298,7 @@ async function seed() {
       isActive: false,
       roles: ['member'],
       memberSince: new Date('10/01/2020'),
-      leftIn: new Date('07/10/2021'),
+      lastActive: new Date('07/10/2021'),
       firstMoviePicked: 'The Swimmer',
       mostRecentMoviePicked: 'Desperately Seeking Susan',
       favoriteMovies: [ ],
@@ -209,7 +1312,7 @@ async function seed() {
       isActive: false,
       roles: [ 'member' ],
       memberSince: new Date('05/29/2024'),
-      leftIn: null,
+      lastActive: null,
       firstMoviePicked: 'The Man Who Fell To Earth',
       mostRecentMoviePicked: 'The Man Who Fell To Earth',
       favoriteMovies: [ ],
@@ -223,7 +1326,7 @@ async function seed() {
       isActive: false,
       roles: [ 'member' ],
       memberSince: new Date('01/15/2021'),
-      leftIn: new Date('04/29/2021'),
+      lastActive: new Date('04/29/2021'),
       firstMoviePicked: 'Best in Show',
       mostRecentMoviePicked: "Romy and Michele's High School Union",
       favoriteMovies: [ ],
@@ -237,7 +1340,7 @@ async function seed() {
       isActive: false,
       roles: [ 'member' ],
       memberSince: new Date('01/26/2022'),
-      leftIn: new Date('01/11/2023'),
+      lastActive: new Date('01/11/2023'),
       firstMoviePicked: 'To Wong Foo, Thanks for Everything! Julie Newman',
       mostRecentMoviePicked: 'My Policeman',
       favoriteMovies: [ ],
@@ -251,7 +1354,7 @@ async function seed() {
       isActive: false,
       roles: [ 'member' ],
       memberSince: new Date('06/10/2021'),
-      leftIn: new Date('11/24/2021'),
+      lastActive: new Date('11/24/2021'),
       firstMoviePicked: 'The Greatest Showman',
       mostRecentMoviePicked: 'The Princess Bride',
       favoriteMovies: [ ],
@@ -265,7 +1368,7 @@ async function seed() {
       isActive: true,
       roles: ['member'],
       memberSince: new Date('10/01/2020'),
-      leftIn: null,
+      lastActive: null,
       firstMoviePicked: 'Drugstore Cowboy',
       mostRecentMoviePicked: 'The Ice Storm',
       favoriteMovies: [],
@@ -279,7 +1382,7 @@ async function seed() {
       isActive: true,
       roles: [ 'member' ],
       memberSince: new Date('10/06/2021'),
-      leftIn: null,
+      lastActive: null,
       firstMoviePicked: 'The Adventures of Baron Munchausen',
       mostRecentMoviePicked: 'Repo Man',
       favoriteMovies: [ ],
@@ -289,6 +1392,7 @@ async function seed() {
     }
   ]);
 
+  await Movie.deleteMany();
   const movies = await Movie.insertMany([
     // Season 1
     {
@@ -1165,8 +2269,8 @@ async function seed() {
       releaseDate: new Date('02/19/1999') , 
       viewingNumber: 44,
       dateViewed: new Date('09/16/2021'),
-      picker: 'ErikEvans',
-      attendees: [ 'ErikEvans', 'AmyUnoShafer' ],
+      picker: 'ErikEKirby',
+      attendees: [ 'ErikKirby', 'AmyUnoShafer' ],
       memberRating: null,
       currentlyStreaming: null,
       season: 'Season 2'
@@ -1222,7 +2326,7 @@ async function seed() {
       cast: [ 'Cary Grant' , 'Raymond Massey' , 'Priscilla Lane' , 
         'Peter Lorre' , 'Edward Everett Horton' , 'James Gleason' , 'Josephine Hull' , 'Jean Adair' , 'John Alexandar' ],
       accolades: [ 'National Film Registry' , 'Photoplay Awards Winner' ],
-      releaseDate: newDate('09/01/1944') ,
+      releaseDate: new Date('09/01/1944') ,
       tags: [ 'classic' , 'halloween' , 'funny' , 'dark' , 'black and white' ],
       viewingNumber: 47,
       dateViewed: new Date('10/06/2021'),
@@ -1463,7 +2567,7 @@ async function seed() {
       writer: [ 'Larry Gelbart' , 'Murray Schisgal' ],
       cast: [ 'Dustin Hoffman' , 'Jessica Lange' , 'Teri Garr' , 'Dabney Coleman' , 'Charles Durning' , 'Geena Davis' , 'Bill Murray' ],
       accolades: [ 'Oscar Winner' , 'National Film Registry' , 'American Film Institute Inductee'], 
-      releaseDate: newDate('12/17/1982') , 
+      releaseDate: new Date('12/17/1982') , 
       tags: [ 'feminism' , 'gender roles' , 'drag' , 'showbiz' , 'soap opera' , 'love triangle' , 'classic' , 'social commentary' ] ,
       releaseDate: new Date('12/17/1982'),
       viewingNumber: 59,
@@ -2700,9 +3804,153 @@ async function seed() {
     },
   ]);
 
-  // const merch = await Merch.insertMany([
-    // add your merch data here
-  // ]);
+  await MerchCategory.deleteMany();
+  const categories = await MerchCategory.insertMany([
+    {
+      category: 'Apparel',
+      products: [ 'tank tops', 'tshirts', 'sweatshirts' , 'caps' , 'beanies' ]
+    },
+    {
+      category: 'Home',
+      products: [ 'mugs' , 'glasses' , 'water bottles' ]
+    },
+    {
+      category: 'Stationary',
+      products: [ 'notebooks' , 'stickers' , 'postcards' ]
+    },
+  ]);
+
+  await MerchProduct.deleteMany();
+  const products = await MerchProduct.insertMany([
+    {
+      item: 'Night Watch Party Tank Top',
+      sizes: [ 'XS' , 'S' , 'M' , 'L' , 'XL' , 'XXL' , '3XL'],
+      colors: [ 'white' , 'black' , 'grey' , 'lavendar' , 'purple' ],
+      description: '',
+      prices: [ 17.99 ,  19.99 , 21.99 ],
+      isSoldOut: false,
+      category: 'Apparel',
+      images: [ ]
+    },
+    {
+      item: 'Night Watch Party T-Shirt',
+      sizes: [ 'XS' , 'S' , 'M' , 'L' , 'XL' , 'XXL' , '3XL' ],
+      colors: [ 'white' , 'black' , 'grey' , 'lavendar' , 'purple' ],
+      description: '',
+      prices: [ 22.99 , 24.99 , 26.99 ],
+      isSoldOut: false,
+      category: 'Apparel',
+      images: [ ]
+    },
+    {
+      item: 'Night Watch Party Sweatshirt',
+      sizes: [ 'XS' , 'S' , 'M' , 'L' , 'XL' , 'XXL' , '3XL' ],
+      colors: [ 'white' , 'black' , 'grey' , 'lavendar' , 'purple' ],
+      description: '',
+      prices: [ 34.99 , 38.99 , 42.99 ],
+      isSoldOut: false,
+      category: 'Apparel',
+      images: [ ]
+    },
+    {
+      item: 'Night Watch Party Beanie',
+      sizes: [ 'one size fits all' ],
+      colors: [ 'white' , 'black' , 'grey' , 'lavendar' , 'purple' ],
+      description: '',
+      prices: [ 23.99 ],
+      isSoldOut: false,
+      category: 'Apparel',
+      images: [ ]
+    },
+    {
+      item: 'Night Watch Party Cap',
+      sizes: [ 'one size fits all' ],
+      colors: [ 'white' , 'black' , 'grey' , 'lavendar' , 'purple' ],
+      description: '',
+      prices: [ 14.99 ],
+      isSoldOut: false,
+      category: 'Home',
+      images: [ ]
+    },
+    {
+      item: 'Night Watch Party Mug',
+      sizes: [ '12 oz' , '16oz' ],
+      colors: [ 'white' , 'purple' ],
+      description: '',
+      prices: [ 12.99 , 15.99 ],
+      isSoldOut: false,
+      category: 'Home',
+      images: [ ]
+    },
+    {
+      item: 'Night Watch Party Cup',
+      sizes: [ '12 oz' , '16oz' ],
+      colors: [ 'white' , 'purple' ],
+      description: '',
+      prices: [ 14.99 , 18.99 ],
+      isSoldOut: false,
+      category: 'Home',
+      images: [ ]
+    },
+    {
+      item: 'Night Watch Party Water Bottle',
+      sizes: [ '12 oz' , '16oz' ],
+      colors: [ 'white' , 'purple' ],
+      description: '',
+      prices: [ 16.99 , 21.99 ],
+      isSoldOut: false,
+      category: 'Home',
+      images: [ ]
+    },
+    {
+      item: 'Night Watch Party Notebook',
+      sizes: [ 'one size' ],
+      colors: [ 'white' , 'black' , 'grey' , 'lavendar' , 'purple' ],
+      description: '',
+      prices: [ 15.99 ],
+      isSoldOut: false,
+      category: 'Stationary',
+      images: [ ]
+    },
+    {
+      item: 'Night Watch Party Stickers',
+      sizes: [ 'single' , '3-pack' , '5-pack' ],
+      colors: [ 'white' , 'black' , 'purple' ],
+      description: '',
+      prices: [ 3.99 , 5.99],
+      isSoldOut: false,
+      category: 'Stationary',
+      images: [ ]
+    },
+    {
+      item: 'Night Watch Party Postcards',
+      sizes: [ 'single' , '5-pack' , '25-pack' ],
+      colors: [ 'white' , 'black' , 'purple' ],
+      description: '',
+      prices: [ 1.99 , 7.99 , 12.99],
+      isSoldOut: false,
+      category: 'Stationary',
+      images: [ ]
+    },
+  ]);
+
+  await MerchOrder.deleteMany();
+  const orders = await MerchOrder.insertMany([
+    {
+      purchaseDate: new Date('10/01/2020'),
+      customer: 
+        {
+          username: 'AmyUnoShafer',
+          firstName: 'Amy',
+          lastName: 'Shafer',
+          email: 'amy.u.shafer@gmail.com',
+          address: '127011 Newton B. Drury Scenic Parkway, Orick, CA 95555',
+        },
+      orderNumber: 'xe45n019',
+      itemsOrdered: [ 'Night Watch Party T-Shirt' , 'Night Watch Party Water Bottle' ],
+      orderStatus: 'Order Fulfilled'
+    }
+  ]);
 
   console.log('Hit Play!');
 }

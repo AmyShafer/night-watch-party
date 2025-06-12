@@ -3,30 +3,37 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const merchProductSchema = new Schema({
-    name: {
+    item: {
         type: String,
         required: true,
         trim: true
     },
+    sizes: {
+        type: Array,
+        required: true
+    },
+    colors: {
+        type: Array
+    },
     description: {
-        type: String
+        type: String,
+        required: true
     },
-    image: {
-        type: String
+    prices: {
+        type: Array,
+        required: true
     },
-    price: {
-        type: Number,
-        required: true,
-        min: 0.99
-    },
-    quantity: {
-        type: Number,
-        min: 0,
-        default: 0
+    isSoldOut: {
+        type: Boolean,
+        required: true
     },
     category: {
         type: Schema.Types.ObjectId,
         ref: 'MerchCategory',
+        required: true
+    },
+    images: {
+        type: Array,
         required: true
     }
 });
