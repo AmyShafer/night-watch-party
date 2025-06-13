@@ -19,11 +19,10 @@ const MerchOrderSchema = new Schema({
         required: true,
         unique: true
     },
-    itemsOrdered: {
+    itemsOrdered: [{
         type: Schema.Types.ObjectId,
-        ref: 'Product',
-        items: []
-    },
+        ref: 'Product'
+    }],
     orderStatus: {
         type: String,
         required: true

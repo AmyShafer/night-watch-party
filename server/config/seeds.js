@@ -1,5 +1,6 @@
 const db = require('./connection');
 const { Event, Member, Movie, MerchCategory, MerchProduct, MerchOrder } = require('../models');
+require('mongoose').set('debug', false);
 
 db.once('open', async () => {
   await seed();
@@ -1567,7 +1568,7 @@ async function seed() {
       accolades: [ 'Oscar Nominee' ], 
       releaseDate: new Date('07/17/1981'),
       tags: [ 'relationships' , 'passionate' , 'heart-break' , 'coming-of-age' ],
-      viewingNumber: 8,
+      viewingNumber: 9,
       dateViewed: new Date('11/25/2020'),
       picker: 'DianaD\'Orazio',
       attendees: [ 'DianaD\'Orazio', 'JohnCecilPrice', 'ReynaHowkins', 'AmyUnoShafer' ],
@@ -3491,7 +3492,7 @@ async function seed() {
       accolades: [ 'Gotham Award Nominee' , 'National Board of Review Top 10 Independent Films' , 'Golden Globe Nominee' ], 
       releaseDate: new Date('06/16/2011'), 
       tags: [ 'funny' , 'different' , 'dark' , 'twisted' , 'based on a true story' , 'small-town america' , 'indie' ] ,
-      viewingNumber: 106,
+      viewingNumber: 105,
       dateViewed: new Date('12/18/2023'),
       picker: 'AmyUnoShafer',
       attendees: [ 'AmyUnoShafer' ],
@@ -3820,6 +3821,10 @@ async function seed() {
     },
   ]);
 
+  const apparelCategory = await MerchCategory.findOne({ category: 'Apparel' });
+  const homeCategory = await MerchCategory.findOne({ category: 'Home' });
+  const stationaryCategory = await MerchCategory.findOne({ category: 'Stationary' });
+
   await MerchProduct.deleteMany();
   const products = await MerchProduct.insertMany([
     {
@@ -3829,7 +3834,7 @@ async function seed() {
       description: '',
       prices: [ 17.99 ,  19.99 , 21.99 ],
       isSoldOut: false,
-      category: 'Apparel',
+      category: apparelCategory.id,
       images: [ ]
     },
     {
@@ -3839,7 +3844,7 @@ async function seed() {
       description: '',
       prices: [ 22.99 , 24.99 , 26.99 ],
       isSoldOut: false,
-      category: 'Apparel',
+      category: apparelCategory.id,
       images: [ ]
     },
     {
@@ -3849,7 +3854,7 @@ async function seed() {
       description: '',
       prices: [ 34.99 , 38.99 , 42.99 ],
       isSoldOut: false,
-      category: 'Apparel',
+      category: apparelCategory.id,
       images: [ ]
     },
     {
@@ -3859,7 +3864,7 @@ async function seed() {
       description: '',
       prices: [ 23.99 ],
       isSoldOut: false,
-      category: 'Apparel',
+      category: apparelCategory.id,
       images: [ ]
     },
     {
@@ -3869,7 +3874,7 @@ async function seed() {
       description: '',
       prices: [ 14.99 ],
       isSoldOut: false,
-      category: 'Home',
+      category: homeCategory.id,
       images: [ ]
     },
     {
@@ -3879,7 +3884,7 @@ async function seed() {
       description: '',
       prices: [ 12.99 , 15.99 ],
       isSoldOut: false,
-      category: 'Home',
+      category: homeCategory.id,
       images: [ ]
     },
     {
@@ -3889,7 +3894,7 @@ async function seed() {
       description: '',
       prices: [ 14.99 , 18.99 ],
       isSoldOut: false,
-      category: 'Home',
+      category: homeCategory.id,
       images: [ ]
     },
     {
@@ -3899,7 +3904,7 @@ async function seed() {
       description: '',
       prices: [ 16.99 , 21.99 ],
       isSoldOut: false,
-      category: 'Home',
+      category: homeCategory.id,
       images: [ ]
     },
     {
@@ -3909,7 +3914,7 @@ async function seed() {
       description: '',
       prices: [ 15.99 ],
       isSoldOut: false,
-      category: 'Stationary',
+      category: stationaryCategory.id,
       images: [ ]
     },
     {
@@ -3919,7 +3924,7 @@ async function seed() {
       description: '',
       prices: [ 3.99 , 5.99],
       isSoldOut: false,
-      category: 'Stationary',
+      category: stationaryCategory.id,
       images: [ ]
     },
     {
@@ -3929,11 +3934,14 @@ async function seed() {
       description: '',
       prices: [ 1.99 , 7.99 , 12.99],
       isSoldOut: false,
-      category: 'Stationary',
+      category: stationaryCategory.id,
       images: [ ]
     },
   ]);
 
+  const tShirt = await MerchProduct.findOne({ item: 'Night Watch Party T-Shirt' });
+  const waterBottle = await MerchProduct.findOne({ item: 'Night Watch Party Water Bottle' });
+  
   await MerchOrder.deleteMany();
   const orders = await MerchOrder.insertMany([
     {
@@ -3947,7 +3955,7 @@ async function seed() {
           address: '127011 Newton B. Drury Scenic Parkway, Orick, CA 95555',
         },
       orderNumber: 'xe45n019',
-      itemsOrdered: [ 'Night Watch Party T-Shirt' , 'Night Watch Party Water Bottle' ],
+      itemsOrdered: [tShirt.id, waterBottle.id],
       orderStatus: 'Order Fulfilled'
     }
   ]);
