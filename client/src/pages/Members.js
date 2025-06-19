@@ -1,5 +1,5 @@
 import React from 'react';
-import UserHome from 'UserHome.js';
+import MemberHome from 'MemberHome.js';
 import Profile from 'Profile.js';
 import SendInvite from 'SendInvite.js';
 import Movies from 'Movies.js';
@@ -9,7 +9,7 @@ import Merch from 'Merch.js';
 const Members = () => {
   return (
     <div className="container">
-      <UserHome />
+      <MemberHome />
       <Profile />
       <SendInvite />
       <Movies />

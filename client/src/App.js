@@ -12,7 +12,7 @@ import MovieGroupHowTo from './pages/MovieGroupHowTo.js';
 import Signup from './pages/Signup.js';
 
 // Members Only Pages
-import UserHome from './pages/UserHome.js';
+import UserHome from './pages/MemberHome.js';
 import Profile from './pages/Profile.js';
 import Members from './pages/Members.js';
 import Movies from './pages/Movies.js'; 

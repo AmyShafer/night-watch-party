@@ -1,11 +1,11 @@
 import React from 'react';
-import UserHome from 'UserHome.js';
+import MemberHome from 'MemberHome.js';
 import Profile from 'Profile.js';
 
 const Notifications = () => {
   return (
     <div className="container">
-      <UserHome />
+      <MemberHome />
       <Profile />
     </div>
   );

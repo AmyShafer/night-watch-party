@@ -1,10 +1,10 @@
 import React from 'react';
-import UserHome from 'UserHome.js';
+import MemberHome from 'MemberHome.js';
 
 const Admin = () => {
   return (
     <div className="container">
-      <UserHome />
+      <MemberHome />
     </div>
   );
 };

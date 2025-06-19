@@ -1,6 +1,6 @@
 import React from 'react';
 import About from 'About.js'
-import UserHome from 'UserHome.js';
+import MemberHome from 'MemberHome.js';
 import Profile from 'Profile.js';
 import Members from 'Members.js';
 import Movies from 'Movies.js';
@@ -10,7 +10,7 @@ const Signup = () => {
     return (
         <div className = "container" >
           <About />
-          <UserHome />
+          <MemberHome />
           <Profile />
           <Members />
           <Movies />
