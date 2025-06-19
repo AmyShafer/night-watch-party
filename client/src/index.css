@@ -96,4 +96,23 @@ button {
     font-weight: 600px;
 }
 
+form {
+    background-color: var(--horowitz-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
 
+input {
+    font-family: 'Overpass', sans-serif;
+    color: var(--after-hours);
+    background-color: var(--muriel-white);
+    border: 5px solid var(--willkommen-violet);
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
