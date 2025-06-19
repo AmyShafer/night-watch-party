@@ -15,7 +15,7 @@ import Signup from './pages/Signup.js';
 import UserHome from './pages/UserHome.js';
 import Profile from './pages/Profile.js';
 import Members from './pages/Members.js';
-import MemberMovies from './pages/MemberMovies.js'; // rename if needed
+import Movies from './pages/Movies.js'; 
 import Merch from './pages/Merch.js';
 import Notifications from './pages/Notifications.js';
 import SendInvite from './pages/SendInvite.js';
@@ -60,7 +60,7 @@ function App() {
             <Route path="/user" element={<UserHome />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/members" element={<Members />} />
-            <Route path="/movies" element={<MemberMovies />} />
+            <Route path="/movies" element={<Movies />} />
             <Route path="/merch" element={<Merch />} />
             <Route path="/notifications" element={<Notifications />} />
             <Route path="/invite" element={<SendInvite />} />

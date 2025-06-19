@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Sugar Pie';
+    src: url('assets/Sugar-Pie.ttf') format('truetype');
+}
+
+.App {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Overpass' , sans-serif;
+}

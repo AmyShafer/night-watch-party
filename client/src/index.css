@@ -15,6 +15,85 @@
     --city-slickers-sienna: #954131;
 }
 
+/* FONT INFO */
+/* Overpass in all caps is used for navigation */
+/* Overpass (regular) for body font */
+/* Sugar Pie is Logo and H1 & H2 font */
+/* Vintage Rotter is H3 font */
+
 body {
     background-color: var(--after-hours);
+    margin: 0;
+    height: auto;
+    font-family: 'Overpass', sans-serif;
+    text-align: center;
 }
+
+.navbar {
+    font-family: 'Overpass', sans-serif;
+    text-transform: uppercase;
+    justify-content: center;
+    align-content: center;
+}
+
+h1 {
+    font-family: 'Sugar Pie', sans-serif;
+    font-size: 3em;
+    text-transform: uppercase;
+    color: var(--muriel-white);
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Sugar Pie', sans-serif;
+    font-size: 2.5em;
+    color: var(--muriel-white);
+    margin: 0;
+}
+
+h3 {
+    font-family: 'Vintage Rotter', cursive;
+    font-size: 2.2em;
+    color: var(--after-hours);
+}
+
+p {
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.2em;
+    color: var(--after-hours);
+    margin: 20px 0 30px;
+}
+
+a {
+    font-family: 'Sugar Pie', sans-serif;
+    font-size: 1.2em;
+    color: var(--willkommen-violet);
+    text-decoration: underline;
+    margin: 15px 0;
+}
+
+a:hover {
+    font-family: 'Sugar Pie', sans-serif;
+    font-size: 1.2em;
+    color: var(--willkommen-violet);
+    text-shadow: 0 0 7px var(--muriel-white), 0 0 9px var(--party-girl-pink);
+}
+
+/* For the button of meeting room before the room is open */
+button.ghost {
+    background-color: var(--nakatomi-grey);
+    color: var(--muriel-white);
+    font-family: 'Overpass', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600px;
+}
+
+button {
+    background-color: var(--willkommen-violet);
+    color: var(--muriel-white);
+    font-family: 'Overpass', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600px;
+}
+
+
