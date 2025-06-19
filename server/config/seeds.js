@@ -3830,7 +3830,7 @@ async function seed() {
     {
       item: 'Night Watch Party Tank Top',
       sizes: [ 'XS' , 'S' , 'M' , 'L' , 'XL' , 'XXL' , '3XL'],
-      colors: [ 'white' , 'black' , 'grey' , 'lavendar' , 'purple' ],
+      colors: [ 'white' , 'black' , 'grey' , 'lavender' , 'purple' ],
       description: '',
       prices: [ 17.99 ,  19.99 , 21.99 ],
       isSoldOut: false,
@@ -3840,7 +3840,7 @@ async function seed() {
     {
       item: 'Night Watch Party T-Shirt',
       sizes: [ 'XS' , 'S' , 'M' , 'L' , 'XL' , 'XXL' , '3XL' ],
-      colors: [ 'white' , 'black' , 'grey' , 'lavendar' , 'purple' ],
+      colors: [ 'white' , 'black' , 'grey' , 'lavender' , 'purple' ],
       description: '',
       prices: [ 22.99 , 24.99 , 26.99 ],
       isSoldOut: false,
@@ -3850,7 +3850,7 @@ async function seed() {
     {
       item: 'Night Watch Party Sweatshirt',
       sizes: [ 'XS' , 'S' , 'M' , 'L' , 'XL' , 'XXL' , '3XL' ],
-      colors: [ 'white' , 'black' , 'grey' , 'lavendar' , 'purple' ],
+      colors: [ 'white' , 'black' , 'grey' , 'lavender' , 'purple' ],
       description: '',
       prices: [ 34.99 , 38.99 , 42.99 ],
       isSoldOut: false,
@@ -3860,7 +3860,7 @@ async function seed() {
     {
       item: 'Night Watch Party Beanie',
       sizes: [ 'one size fits all' ],
-      colors: [ 'white' , 'black' , 'grey' , 'lavendar' , 'purple' ],
+      colors: [ 'white' , 'black' , 'grey' , 'lavender' , 'purple' ],
       description: '',
       prices: [ 23.99 ],
       isSoldOut: false,
@@ -3870,7 +3870,7 @@ async function seed() {
     {
       item: 'Night Watch Party Cap',
       sizes: [ 'one size fits all' ],
-      colors: [ 'white' , 'black' , 'grey' , 'lavendar' , 'purple' ],
+      colors: [ 'white' , 'black' , 'grey' , 'lavender' , 'purple' ],
       description: '',
       prices: [ 14.99 ],
       isSoldOut: false,
@@ -3910,7 +3910,7 @@ async function seed() {
     {
       item: 'Night Watch Party Notebook',
       sizes: [ 'one size' ],
-      colors: [ 'white' , 'black' , 'grey' , 'lavendar' , 'purple' ],
+      colors: [ 'white' , 'black' , 'grey' , 'lavender' , 'purple' ],
       description: '',
       prices: [ 15.99 ],
       isSoldOut: false,

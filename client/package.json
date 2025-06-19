@@ -1,9 +1,22 @@
 {
     "name": "night-watch-party-client",
+    "version": "1.0.0",
+    "description": "A website for quirky, passionate, and socialable Movie Group!",
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
+    },
+    "keywords": [],
+    "author": "Amy U. Shafer",
+    "license": "MIT",
+    "dependencies": {
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "react-router-dom": "^7.6.2"
+    },
+    "devDependencies": {
+        "concurrently": "^9.1.2"
     }
 }
