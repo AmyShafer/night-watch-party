@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PublicNav from './components/common/Navbar/PublicNavbar.js';
-import UserNavbar from './components/common/Navbar/UserNavbar.js';
+import MemberNavbar from './components/common/Navbar/MemberNavbar.js';
 
 // Public Pages
 import Home from './pages/Home.js';
@@ -12,10 +12,9 @@ import MovieGroupHowTo from './pages/MovieGroupHowTo.js';
 import Signup from './pages/Signup.js';
 
 // Members Only Pages
-import UserHome from './pages/MemberHome.js';
+import MemberHome from './pages/MemberHome.js';
 import Profile from './pages/Profile.js';
 import Members from './pages/Members.js';
-import Movies from './pages/Movies.js'; 
 import Merch from './pages/Merch.js';
 import Notifications from './pages/Notifications.js';
 import SendInvite from './pages/SendInvite.js';
@@ -41,7 +40,7 @@ function App() {
   return (
     <Router>
       {loggedIn ? (
-        <UserNavbar onLogout={handleLogout} />
+        <MemberNavbar onLogout={handleLogout} />
       ) : (
         <PublicNav />
       )}

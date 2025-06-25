@@ -1,6 +1,6 @@
 import React from 'react';
-import MemberHome from 'MemberHome.js';
-import Profile from 'Profile.js';
+import MemberHome from './MemberHome.js';
+import Profile from './Profile.js';
 
 const Notifications = () => {
   return (

@@ -1,12 +1,11 @@
 import React from 'react';
-import Home from 'Home.js';
-import Login from 'Login.js';
+import { Link } from 'react-router-dom';
 
 const PublicNav = () => {
     return (
         <div className="container">
-          <About />
-          <Login />
+          <Link to="/about">About</Link>
+          <Link to="/login">Login</Link>
       </div>
     );
 };

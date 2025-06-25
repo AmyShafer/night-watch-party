@@ -1,10 +1,10 @@
 import React from 'react';
-import MemberHome from 'MemberHome.js';
-import Profile from 'Profile.js';
-import Notifications from 'Notifications.js';
-import Members from 'Members.js';
-import Movies from 'Movies.js';
-import Merch from 'Merch.js';
+import MemberHome from './Admin';
+import Profile from './Profile.js';
+import Notifications from './Notifications.js';
+import Members from './Members.js';
+import Movies from './Movies.js';
+import Merch from './Merch.js';
 
 const SendInvite = () => {
     return (
